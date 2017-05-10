@@ -12,7 +12,7 @@
 ~ sourceforge.net - tutorialspoint.com - adminer.org
 ~ indoxploit.or.id - linuxcode.org - devilzc0de.com
 ~ madleets.com - linuxsec.org - stackoverflow.com
-~ w3schools.com - indonesia.go.id 
+~ w3schools.com - indonesia.go.id - w0rms.com
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 session_start();
