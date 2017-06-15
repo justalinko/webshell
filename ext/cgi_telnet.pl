@@ -129,7 +129,7 @@ sub PrintPageHeader
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>Hacsugia</title>
+<title>1945v2017 - CGI Telnet</title>
 
 $HtmlMetaHeader
 
