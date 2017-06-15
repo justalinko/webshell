@@ -1,7 +1,7 @@
 #!/usr/bin/perl -I/usr/local/bandmin
 use MIME::Base64;
 $Version= "CGI-Telnet Version 1.3";
-$EditPersion="<font style='text-shadow: 0px 0px 6px rgb(255, 0, 0), 0px 0px 5px rgb(300, 0, 0), 0px 0px 5px rgb(300, 0, 0); color:#ffffff; font-weight:bold;'>b374k - CGI-Telnet</font>";
+$EditPersion="<font style='text-shadow: 0px 0px 6px rgb(255, 0, 0), 0px 0px 5px rgb(300, 0, 0), 0px 0px 5px rgb(300, 0, 0); color:#ffffff; font-weight:bold;'>1945v2017 - CGI-Telnet</font>";
 
 $Password = "";			# Change this. You will need to enter this to login.
 sub Is_Win(){
