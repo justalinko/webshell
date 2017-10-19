@@ -216,7 +216,7 @@ $scndir = $j_film->ListDir($getdir);
 $j_html->j_print($j_html->Head(
 	array($GLOBALS['j_judul'],
 	array('icon' => 'https://raw.githubusercontent.com/alintamvanz/alintamvanz.github.io/master/images/favicon_1945.gif',
-		  'stylesheet' => 'http://localhost/style.css'))));
+		  'stylesheet' => 'http://alintamvanz.github.io/css/kekw.css'))));
 ?>
 <script type="text/javascript">
 	function j_show(id){
